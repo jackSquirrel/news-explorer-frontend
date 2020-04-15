@@ -4,8 +4,8 @@
   "description": "Frontend for news-explorer project",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch",
-    "start": "NODE_ENV=production rimraf dist && webpack --mode production"
+    "dev": "webpack-dev-server --mode development --open --watch",
+    "start": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -24,9 +24,11 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
     "mini-css-extract-plugin": "^0.9.0",
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-md5-hash": "0.0.6"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

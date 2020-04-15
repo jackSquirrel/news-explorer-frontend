@@ -4,7 +4,8 @@
   "description": "Frontend for news-explorer project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch",
+    "start": "NODE_ENV=production rimraf dist && webpack --mode production"
   },
   "repository": {
     "type": "git",

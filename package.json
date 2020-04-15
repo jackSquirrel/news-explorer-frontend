@@ -1,0 +1,19 @@
+{
+  "name": "news-explorer-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for news-explorer project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackSquirrel/news-explorer-frontend.git"
+  },
+  "author": "Timur Ismagilov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackSquirrel/news-explorer-frontend/issues"
+  },
+  "homepage": "https://github.com/jackSquirrel/news-explorer-frontend#readme"
+}

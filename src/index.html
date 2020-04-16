@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-      <meta charset="UTF-8">
-      <title>Webpack</title>
-      <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Webpack</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 <body>
-      <h1>Hello</h1>
-      <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  <div class="root">
+    <div class="">
+      <header class="header">
+        <p class="header__logo">News Explorer</p>
+        <a class="header__menu header__menu_main">Главная</a>
+        <a class="header__menu header__menu_auth">Авторизироваться</a>
+      </header>
+      <section class="search">
+        <h1 class="search__title">Что в мире творится</h1>
+        <p class="search__subtitle">Найдите самые свежие статьи на любую тему
+          и сохраняйте в своем личном кабинете.</p>
+        <form class="search__field">
+          <button class="search__button">Искать</button>
+        </form>
+      </section>
+      <section class="results">
+
+      </section>
+      <section class="author">
+        <img class="author__image" src="" alt="author's foto">
+        <h2 class="author__title">Об авторе</h2>
+        <p class="author__text">Это блок с описанием автора проекта. Здесь следует
+          указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+          Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и
+          чем можете помочь потенциальным заказчикам.</p>
+      </section>
+      <footer class="footer">
+        <a class="footer__rights">@2020 Supersite, Powered by News API</a>
+        <div class="footer__menu">
+          <a class="footer__main">Главная</a>
+          <a class="footer__yandex">Яндекс.Практикум</a>
+        </div>
+        <a class="footer__socials footer__socials_github"></a>
+        <a class="footer__socials footer__socials_fb"></a>
+      </footer>
+    </div>
+  </div>
+  <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>

@@ -9,11 +9,11 @@
 </head>
 <body>
   <div class="root">
-    <div class="">
+    <div class="background-image">
       <header class="header">
-        <p class="header__logo">News Explorer</p>
+        <p class="header__logo">NewsExplorer</p>
         <a class="header__menu header__menu_main">Главная</a>
-        <a class="header__menu header__menu_auth">Авторизироваться</a>
+        <button class="header__menu header__menu_auth">Авторизироваться</button>
       </header>
       <section class="search">
         <h1 class="search__title">Что в мире творится</h1>
@@ -23,6 +23,8 @@
           <button class="search__button">Искать</button>
         </form>
       </section>
+    </div>
+    <main class="content">
       <section class="results">
 
       </section>
@@ -34,8 +36,9 @@
           Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и
           чем можете помочь потенциальным заказчикам.</p>
       </section>
-      <footer class="footer">
-        <a class="footer__rights">@2020 Supersite, Powered by News API</a>
+    </main>
+    <footer class="footer">
+      <a class="footer__rights">@2020 Supersite, Powered by News API</a>
         <div class="footer__menu">
           <a class="footer__main">Главная</a>
           <a class="footer__yandex">Яндекс.Практикум</a>
@@ -43,7 +46,6 @@
         <a class="footer__socials footer__socials_github"></a>
         <a class="footer__socials footer__socials_fb"></a>
       </footer>
-    </div>
   </div>
   <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>

@@ -1,0 +1,13 @@
+@import url(./_auth/header__menu_auth.css);
+@import url(./_main/header__menu_main.css);
+
+.header__menu {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  display: inline-block;
+  text-align: right;
+  position: absolute;
+}

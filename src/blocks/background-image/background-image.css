@@ -1,0 +1,6 @@
+.background-image {
+  min-width: 100%;
+  background-image: url('/src/images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

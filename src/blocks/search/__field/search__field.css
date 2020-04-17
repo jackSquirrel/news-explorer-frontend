@@ -1,0 +1,8 @@
+.search__field {
+  width: 608px;
+  height: 64px;
+  margin: 64px 416px 80px;
+  position: relative;
+  border-radius: 100px;
+  background: #ffffff;
+}

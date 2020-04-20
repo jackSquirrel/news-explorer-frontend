@@ -1,0 +1,9 @@
+.author__text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1a1b22;
+  max-width: 600px;
+  margin-top: 24px;
+}

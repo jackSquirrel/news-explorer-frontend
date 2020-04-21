@@ -1,4 +1,13 @@
 .author__content {
   margin-left: 56px;
   margin-top: 131px;
+  margin-right: 40px;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .author__content {
+    margin-top: 40px;
+    margin-left: 32px;
+  }
 }

@@ -4,7 +4,14 @@
 @import url(./__text/author__text.css);
 
 .author {
+  width: 1440px;
   display: flex;
-  align-items: left;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 1439px) and (min-width: 768px){
+  .author {
+    width: 100%;
+  }
 }

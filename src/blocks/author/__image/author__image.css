@@ -1,9 +1,16 @@
 .author__image {
   margin-top: 80px;
-  margin-bottom: 80px;
   margin-left: 104px;
-  width: 464px;
+  max-width: 464px;
   height: 464px;
   border-radius: 1000px;
-  border: 1px solid black;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .author__image {
+    max-width: 232px;
+    height: 232px;
+    margin-top: 61px;
+    margin-left: 40px;
+  }
 }

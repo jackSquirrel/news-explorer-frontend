@@ -1,9 +1,19 @@
 .footer__menu {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
   text-align: center;
   color: #1a1b22;
-  border: 1px solid black;
+  position: absolute;
+  display: inline-block;
+  top: 30px;
+  right: 216px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__menu {
+    top: 21px;
+    right: 136px;
+  }
 }

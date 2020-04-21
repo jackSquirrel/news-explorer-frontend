@@ -1,0 +1,15 @@
+.footer__socials_fb {
+  right: 106px;
+}
+
+.footer__socials_fb::before {
+  content: url(/src/images/fb.png);
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__socials_fb {
+    right: 41px;
+  }
+}

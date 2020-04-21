@@ -4,7 +4,16 @@
   font-size: 16px;
   line-height: 22px;
   color: #b6bcbf;
-  margin-left: 104px;
   margin-top: 32px;
+  margin-left: 104px;
   margin-bottom: 26px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__rights {
+    margin-top: 24px;
+    margin-left: 40px;
+    margin-bottom: 18px;
+  }
 }

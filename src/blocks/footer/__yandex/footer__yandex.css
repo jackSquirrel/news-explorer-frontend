@@ -1,0 +1,9 @@
+.footer__yandex {
+  padding: 0 12px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__yandex {
+    padding: 0 8px;
+  }
+}

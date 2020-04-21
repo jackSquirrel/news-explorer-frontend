@@ -1,0 +1,13 @@
+@import url(./_fb/footer__socials_fb.css);
+@import url(./_github/footer__socials_github.css);
+
+.footer__socials {
+  position: absolute;
+  top: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__socials {
+    top: 21px;
+  }
+}

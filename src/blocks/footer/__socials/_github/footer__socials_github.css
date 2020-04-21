@@ -1,0 +1,15 @@
+.footer__socials_github {
+  right: 152px;
+}
+
+.footer__socials_github::before {
+  content: url(/src/images/github.png);
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__socials_github {
+    right: 88px;
+  }
+}

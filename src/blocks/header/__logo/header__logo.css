@@ -2,9 +2,18 @@
   font-family: 'Roboto Slab';
   font-weight: 900;
   font-size: 20px;
+  line-height: 24px;
   color: #ffffff;
   margin-top: 30px;
   margin-bottom: 26px;
   margin-left: 104px;
   display: inline-block;
+}
+
+@media screen and (max-width: 900px){
+  .header__logo {
+    margin-left: 40px;
+    margin-top: 22.73px;
+    margin-bottom: 18.47px;
+  }
 }

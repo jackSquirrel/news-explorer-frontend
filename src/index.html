@@ -30,7 +30,7 @@
 
       </section>
       <section class="author">
-        <img class="author__image" src="" alt="author's foto">
+        <img class="author__image" src="<%=require('./images/barb1.png')%>" alt="author's foto">
         <div class="author__content">
           <h2 class="author__title">Об авторе</h2>
           <p class="author__text">Это блок с описанием автора проекта. Здесь следует
@@ -41,14 +41,14 @@
       </section>
     </main>
     <footer class="footer">
-      <a class="footer__rights">@2020 Supersite, Powered by News API</a>
-        <div class="footer__menu">
-          <a class="footer__main">Главная</a>
-          <a class="footer__yandex">Яндекс.Практикум</a>
-        </div>
-        <a class="footer__socials footer__socials_github"></a>
-        <a class="footer__socials footer__socials_fb"></a>
-      </footer>
+      <a class="footer__rights">&copy2020 Supersite, Powered by News API</a>
+      <div class="footer__menu">
+        <a class="footer__main">Главная</a>
+        <a class="footer__yandex">Яндекс.Практикум</a>
+      </div>
+      <a class="footer__socials footer__socials_github"></a>
+      <a class="footer__socials footer__socials_fb"></a>
+    </footer>
   </div>
   <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>

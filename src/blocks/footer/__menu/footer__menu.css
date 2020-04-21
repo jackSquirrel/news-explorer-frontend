@@ -1,0 +1,9 @@
+.footer__menu {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #1a1b22;
+  border: 1px solid black;
+}

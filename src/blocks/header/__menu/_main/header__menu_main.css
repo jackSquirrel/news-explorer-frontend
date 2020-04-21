@@ -1,4 +1,14 @@
 .header__menu_main {
   top: 30px;
   right: 312px;
+  padding-bottom: 23px;
+  border-bottom: 3px solid #ffffff;
+}
+
+@media screen and (max-width: 900px) {
+  .header__menu_main {
+    top: 22px;
+    right: 235px;
+    padding-bottom: 17px;
+  }
 }

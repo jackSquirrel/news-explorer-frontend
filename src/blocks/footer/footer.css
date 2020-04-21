@@ -1,0 +1,7 @@
+@import url(./__rights/footer__rights.css);
+@import url(./__menu/footer__menu.css);
+
+.footer {
+  position: relative;
+  border: 1px solid red;
+}

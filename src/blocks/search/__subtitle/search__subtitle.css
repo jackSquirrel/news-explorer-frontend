@@ -6,5 +6,21 @@
   color: #ffffff;
   max-width: 545px;
   margin-top: 32px;
-  margin-left: 416px;
+  margin-left: calc((100% - 608px)/2);
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .search__subtitle {
+    margin-left: calc((100% - 448px)/2);
+    margin-top: 18px;
+    max-width: 452px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search__subtitle {
+    margin-left: 160px;
+  }
 }

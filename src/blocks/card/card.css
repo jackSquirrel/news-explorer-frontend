@@ -1,0 +1,14 @@
+@import url(./__img/card__img.css);
+@import url(./__save/card__save.css);
+@import url(./__unlog/card__unlog.css);
+@import url(./__date/card__date.css);
+@import url(./__title/card__title.css);
+@import url(./__text/card__text.css);
+@import url(./__sorce/card__source.css);
+
+.card {
+  border-radius: 16px;
+  max-width: 400px;
+  background-color: #ffffff;
+  position: relative;
+}

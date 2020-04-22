@@ -1,0 +1,7 @@
+@import url(./circle-preloader.css);
+@import url(./__message/preloader__message.css);
+
+.preloader {
+  width: 100%;
+  background-color: #f5f6f7;
+}

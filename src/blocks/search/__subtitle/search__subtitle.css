@@ -9,8 +9,6 @@
   margin-left: calc((100% - 608px)/2);
 }
 
-
-
 @media screen and (max-width: 900px) {
   .search__subtitle {
     margin-left: calc((100% - 448px)/2);
@@ -19,8 +17,9 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .search__subtitle {
-    margin-left: 160px;
+    max-width: 288px;
+    margin-left: 16px;
   }
 }

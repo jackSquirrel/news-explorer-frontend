@@ -18,8 +18,9 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .search__title {
-    margin-left: 163px;
+    max-width: 285px;
+    margin-left: 19px;
   }
 }

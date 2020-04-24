@@ -1,0 +1,11 @@
+.header-authorized__menu_main {
+  top: 30px;
+  right: 460px;
+}
+
+@media screen and (max-width: 900px) {
+  .header-authorized__menu_main {
+    top: 22px;
+    right: 332px;
+  }
+}

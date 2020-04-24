@@ -1,2 +1,2 @@
 import "./style.css";
-console.log('kek')
+console.log('kek');

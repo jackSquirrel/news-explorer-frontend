@@ -11,3 +11,5 @@
 @import url(./blocks/results/results.css);
 @import url(./blocks/card/card.css);
 @import url(./blocks/preloader/preloader.css);
+@import url(./blocks/not-found/not-found.css);
+@import url(./blocks/header-authorized/header-authorized.css);

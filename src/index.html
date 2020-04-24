@@ -9,17 +9,20 @@
 </head>
 <body>
   <div class="root">
+
     <div class="background-image">
-      <header class="header">
+      <header class="header header-unauthorized invisible">
         <p class="header__logo">NewsExplorer</p>
         <a class="header__menu header__menu_main">Главная</a>
         <button class="header__menu header__menu_auth" type="menu">Авторизироваться</button>
       </header>
-      <header class="header header-authorised invisible">
+      <header class="header header-authorized">
         <p class="header__logo">NewsExplorer</p>
-        <a class="header__menu header__menu_main">Главная</a>
-        <button class="header__menu header__menu_auth" type="menu">Авторизироваться</button>
+        <a class="header__menu header-authorized__menu_main">Главная</a>
+        <a class="header__menu header-authorized__menu_saved">Сохраненные статьи</a>
+        <button  class="header__menu header-authorized__menu_quit" type="">Name</button>
       </header>
+
       <section class="search">
         <h1 class="search__title">Что в мире творится?</h1>
         <p class="search__subtitle">Найдите самые свежие статьи на любую тему
@@ -30,12 +33,20 @@
         </form>
       </section>
     </div>
+
     <main class="content">
       <section class="preloader">
         <i class="circle-preloader"></i>
         <p class="preloader__message">Идет поиск новостей...</p>
       </section>
-      <section class="results invisible">
+
+      <section class="not-found ">
+        <div class="not-found__image"></div>
+        <h4 class="not-found__title">Ничего не найдено</h4>
+        <p class="not-found__text">К сожалению по вашему запросу ничего не найдено.</p>
+      </section>
+
+      <section class="results">
         <h2 class="results__title">Результаты поиска</h2>
         <div class="results__container">
           <div class="card">
@@ -94,24 +105,30 @@
         </div>
         <button class="results__see-more" type="button">Показать еще</button>
       </section>
+
       <section class="author">
-        <img class="author__image" src="<%=require('./images/barb1.png')%>" alt="author's foto">
+        <img class="author__image" src="<%=require('./images/barb1.png').default%>" alt="author's foto">
         <div class="author__content">
           <h2 class="author__title">Об авторе</h2>
-          <p class="author__text">Я Барбара и я показываю факулю всем хэйтерам.
-            Сасаи песос, хейтер. Мой парень Дилан Спроус, а я мадель.
+          <p class="author__text">
+            Всем привет! Меня зовут Исмагилов Тимур, я закончил Яндекс.Практикум, а это мой
+            дипломный проект. Теперь я создаю крутые сайты, и это пример одного из них.
+          </p>
+          <p class="author__text">
+            Если хотите предложить мне работу - ссылки внизу страницы!
           </p>
           </div>
       </section>
     </main>
+
     <footer class="footer">
-      <a class="footer__rights">&copy2020 Supersite, Powered by News API</a>
       <div class="footer__menu">
         <a class="footer__main">Главная</a>
         <a class="footer__yandex">Яндекс.Практикум</a>
       </div>
       <a class="footer__socials footer__socials_github"></a>
       <a class="footer__socials footer__socials_fb"></a>
+      <a class="footer__rights">&copy2020 Supersite, Powered by News API</a>
     </footer>
   </div>
   <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

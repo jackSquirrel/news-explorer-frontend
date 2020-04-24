@@ -11,3 +11,9 @@
     top: 21px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .footer__socials {
+    top: 22px;
+  }
+}

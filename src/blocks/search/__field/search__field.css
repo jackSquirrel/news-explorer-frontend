@@ -1,17 +1,22 @@
 .search__field {
   width: 608px;
-  height: 64px;
   margin: 64px auto 80px;
   position: relative;
-  border-radius: 100px;
-  background: #ffffff;
+  border: 0;
 }
 
 @media screen and (max-width: 900px) {
   .search__field {
     width: 448px;
-    height: 56px;
     margin-bottom: 48px;
     margin-top: 48px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .search__field {
+    width: calc(100% - 32px);
+    margin-top: 122px;
+    margin-bottom: 32px;
   }
 }

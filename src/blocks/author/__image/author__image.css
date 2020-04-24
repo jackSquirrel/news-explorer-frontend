@@ -7,12 +7,20 @@
   border-radius: 1000px;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1024px) {
   .author__image {
     max-width: 232px;
     height: 232px;
     margin-top: 61px;
     margin-left: 40px;
     margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .author__image {
+    max-width: 272px;
+    height: 272px;
+    margin: 32px auto 0;
   }
 }

@@ -17,3 +17,21 @@
     right: 136px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .footer__menu {
+    top: 21px;
+    right: 136px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__menu {
+    position: static;
+    display: block;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-left: calc((100% - 288px)/2);
+    text-align: left;
+  }
+}

@@ -17,3 +17,11 @@
     margin-bottom: 18px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .footer__rights {
+    display: block;
+    margin: 38px auto 22px;
+    max-width: 288px;
+  }
+}

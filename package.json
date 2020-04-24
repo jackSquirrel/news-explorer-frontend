@@ -4,8 +4,8 @@
   "description": "Frontend for news-explorer project",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch",
-    "start": "NODE_ENV=production rimraf dist && webpack --mode production",
+    "dev": "NODE_ENV=development&webpack-dev-server --mode development --open --watch",
+    "start": "NODE_ENV=production&rimraf dist && webpack --mode production",
     "deploy": "NODE_ENV=production gh-pages -d dist"
   },
   "repository": {
@@ -30,7 +30,7 @@
     "gh-pages": "~2.0.1",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^3.2.0",
-    "image-webpack-loader": "^6.0.0",
+    "image-webpack-loader": "6.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "core-js": "^3.4.1"
+    "core-js": "^3.4.1",
+    "path": "^0.12.7"
   }
 }

@@ -17,3 +17,10 @@
     padding: 15px 60px 17px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .results__see-more {
+    padding: 15px 84px 17px;
+    margin-bottom: 32px;
+  }
+}

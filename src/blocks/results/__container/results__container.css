@@ -22,3 +22,29 @@
     row-gap: 8px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .results__container {
+    max-width: 588px;
+    margin: 32px auto;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .results__container {
+    margin: 32px 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .results__container {
+    max-width: 288px;
+    margin: 24px auto 15px;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    grid-auto-rows: 440px;
+  }
+}

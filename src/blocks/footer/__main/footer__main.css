@@ -7,3 +7,10 @@
     padding: 0 8px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .footer__main {
+    display: block;
+    margin-bottom: 20px;
+  }
+}

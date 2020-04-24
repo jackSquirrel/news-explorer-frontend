@@ -7,11 +7,16 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: {
+    main: './src/index.js',
+    secondary: './src/secondary/index.js'
+  },
+
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: '[name]/[name].[chunkhash].js'
   },
+
   module: {
     rules: [{
       test: /\.js$/,
@@ -19,9 +24,9 @@ module.exports = {
       exclude: /node_modules/
     },
     {
-      test: /\.css$/,
+      test: /\.css$/i,
       use: [
-        (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+        isDev ? { loader: 'style-loader' } : { loader: MiniCssExtractPlugin.loader },
         'css-loader',
         'postcss-loader'
       ]
@@ -29,13 +34,7 @@ module.exports = {
     {
       test: /\.(png|jpg|gif|ico|svg)$/,
       use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: './images/[name].[ext]',
-            esModule: false
-          }
-        },
+        'file-loader?name=./images/[name].[ext]',
         {
           loader: 'image-webpack-loader',
           options: {}
@@ -44,7 +43,7 @@ module.exports = {
     },
     {
       test: /\.(eot|ttf|woff|woff2)$/,
-      loader: 'file-loader?name=./vendor/[name].[ext]'
+      loader: 'file-loader?name=../vendor/fonts/[name].[ext]'
     }
     ]
   },
@@ -52,7 +51,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
-    new MiniCssExtractPlugin({filename: 'style.[contenthash].css'}),
+    new MiniCssExtractPlugin({filename: '[name]/[name].[contenthash].css'}),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),

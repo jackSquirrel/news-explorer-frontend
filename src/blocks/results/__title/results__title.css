@@ -9,9 +9,24 @@
 
 @media screen and (max-width: 1000px) {
   .results__title {
+    font-size: 30px;
+    line-height: 34px;
     margin-left: 40px;
     margin-top: 40px;
     font-size: 30px;
     line-height: 34px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .results__title {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .results__title {
+    max-width: 288px;
+    margin: 32px auto 0;
   }
 }

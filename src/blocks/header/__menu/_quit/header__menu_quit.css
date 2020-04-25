@@ -1,0 +1,27 @@
+@import url(./username.css);
+@import url(./__content/quit__content.css);
+
+.header__menu_quit {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  height: 48px;
+  background: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .header__menu_quit {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header__menu_quit {
+    margin-top: 22px;
+    margin-left: 16px;
+    width: 288px;
+    height: 56px;
+    margin-bottom: 24px;
+  }
+}

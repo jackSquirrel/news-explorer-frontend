@@ -1,6 +1,6 @@
 .background-image {
   width: 1440px;
-  background-image: url('/src/images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg');
+  background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
   background-size: contain;
 }
 

@@ -1,0 +1,19 @@
+@import url(./_open/header__menu-button_open.css);
+@import url(./_close/header__menu-button_close.css);
+
+.header__menu-button {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  border: 0;
+}
+
+@media screen and (max-width: 650px) {
+  .header__menu-button {
+    display: block;
+  }
+}

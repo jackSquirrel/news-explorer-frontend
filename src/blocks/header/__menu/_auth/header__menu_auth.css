@@ -1,6 +1,5 @@
 .header__menu_auth {
-  right: 104px;
-  top: 19px;
+  color: #ffffff;
   border: 1px solid #FFFFFF;
   border-radius: 100px;
   background: none;
@@ -9,8 +8,17 @@
 
 @media screen and (max-width: 900px) {
   .header__menu_auth {
-    top: 14px;
-    right: 40px;
     padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header__menu_auth {
+    display: block;
+    margin-left: 16px;
+    padding-top: 15px;
+    padding-bottom: 17px;
+    width: 288px;
+    margin-top: 22px;
   }
 }

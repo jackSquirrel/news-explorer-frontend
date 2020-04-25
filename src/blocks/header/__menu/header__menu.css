@@ -1,5 +1,8 @@
 @import url(./_auth/header__menu_auth.css);
 @import url(./_main/header__menu_main.css);
+@import url(./_saved/header__menu_saved.css);
+@import url(./_quit/header__menu_quit.css);
+@import url(./_active/header__menu_active.css);
 
 .header__menu {
   font-family: 'Roboto';
@@ -7,11 +10,25 @@
   font-size: 18px;
   line-height: 24px;
   color: #ffffff;
+  height: 100%;
   position: absolute;
+  right: 104px;
+  top: 0;
 }
 
 @media screen and (max-width: 900px) {
   .header__menu {
     font-size: 16px;
+    right: 40px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header__menu {
+   top: calc(100% + 1px);
+   right: 0;
+   background-color: #1a1b22;
+   width: 100%;
+   display: none;
   }
 }

@@ -1,3 +1,7 @@
+@import url(./_unsaved/card__save_unsaved.css);
+@import url(./_marked/card__save__marked.css);
+@import url(./_hovered/card__save_hovered.css);
+
 .card__save {
   display: inline-block;
   position: absolute;
@@ -6,7 +10,6 @@
   width: 40px;
   height: 40px;
   background-color: #ffffff;
-  background-image: url(/src/images/bookmark.png);
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 8px;

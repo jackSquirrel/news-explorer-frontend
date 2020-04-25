@@ -1,21 +1,22 @@
-.header__menu_main {
-  display: inline-block;
+.header__menu_saved {
   margin-top: 30px;
   margin-right: 32px;
+  color: #b6bcbf;
 }
 
 @media screen and (max-width: 900px) {
-  .header__menu_main {
+  .header__menu_saved {
     margin-top: 22px;
     margin-right: 16px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .header__menu_main {
+  .header__menu_saved {
+    margin-top: 0;
     display: block;
-    margin-top: 16px;
     line-height: 56px;
     margin-left: 16px;
+    color: #ffffff;
   }
 }

@@ -1,0 +1,26 @@
+.quit__content {
+  margin: 12px 20px;
+  padding-right: 30px;
+  background-image: url(../../../../../images/logout-white.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+@media screen and (max-width: 900px) {
+  .quit__content {
+    margin: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .quit__content {
+    margin: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .quit__content {
+    display: inline-block;
+    margin: 16px auto;
+  }
+}

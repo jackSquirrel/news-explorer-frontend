@@ -10,10 +10,19 @@
   display: inline-block;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
   .header__logo {
     margin-left: 40px;
     margin-top: 22.73px;
     margin-bottom: 18.47px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header__logo {
+    font-size: 16px;
+    margin-left: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 }

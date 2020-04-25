@@ -9,18 +9,28 @@
 </head>
 <body>
   <div class="root">
-
     <div class="background-image">
-      <header class="header header-unauthorized invisible">
+
+      <!-- header__opened - класс для открытого меню -->
+      <header class="header">
         <p class="header__logo">NewsExplorer</p>
-        <a class="header__menu header__menu_main">Главная</a>
-        <button class="header__menu header__menu_auth" type="menu">Авторизироваться</button>
-      </header>
-      <header class="header header-authorized">
-        <p class="header__logo">NewsExplorer</p>
-        <a class="header__menu header-authorized__menu_main">Главная</a>
-        <a class="header__menu header-authorized__menu_saved">Сохраненные статьи</a>
-        <button  class="header__menu header-authorized__menu_quit" type="">Name</button>
+        <!-- При открытом меню меняется на header__menu-button_close -->
+        <button class="header__menu-button header__menu-button_open" type="button"></button>
+        <!-- Меню для неавторизированного состояния -->
+        <div class="header__menu header__unauthorized">
+          <a class="header__menu_main header__menu_active">Главная</a>
+          <button class="header__menu_auth" type="menu">Авторизироваться</button>
+        </div>
+        <!-- Меню для авторизированного состояния -->
+        <div class="header__menu header__authorized invisible">
+          <a class="header__menu_main">Главная</a>
+          <a class="header__menu_saved">Сохраненные статьи</a>
+          <button  class="header__menu_quit" type="">
+            <div class="quit__content">
+              <p class="username">Name</p>
+            </div>
+          </button>
+        </div>
       </header>
 
       <section class="search">
@@ -51,8 +61,10 @@
         <div class="results__container">
           <div class="card">
             <div class="card__img">
-              <p class="card__unlog">Войдите, чтобы сохранять статьи</p>
-              <button class="card__save" type="button"></button>
+              <!-- card__unlog_hovered будет открывать требование войти при наведении через js -->
+              <p class="card__unlog card__unlog_hovered">Войдите, чтобы сохранять статьи</p>
+              <!-- При помощи js при наведении класс будет изменяться на card__save_hovered -->
+              <button class="card__save card__save_unsaved" type="button"></button>
             </div>
             <p class="card__date">2 августа, 2019</p>
             <h3 class="card__title">Национальные парки</h3>
@@ -66,7 +78,21 @@
           <div class="card">
             <div class="card__img">
               <p class="card__unlog">Войдите, чтобы сохранять статьи</p>
-              <button class="card__save" type="button"></button>
+              <button class="card__save card__save_unsaved" type="button"></button>
+            </div>
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальные парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
+              назад здесь начала складываться система национальных парков – охраняемых
+              территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+            <p class="card__source">Лента.ру</p>
+          </div>
+
+          <div class="card">
+            <div class="card__img">
+              <p class="card__unlog card__unlog_hovered">Войдите, чтобы сохранять статьи</p>
+              <button class="card__save card__save_unsaved" type="button"></button>
             </div>
             <p class="card__date">2 августа, 2019</p>
             <h3 class="card__title">Национальные парки</h3>
@@ -80,21 +106,8 @@
           <div class="card">
             <div class="card__img">
               <p class="card__unlog">Войдите, чтобы сохранять статьи</p>
-              <button class="card__save" type="button"></button>
-            </div>
-            <p class="card__date">2 августа, 2019</p>
-            <h3 class="card__title">Национальные парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
-              назад здесь начала складываться система национальных парков – охраняемых
-              территорий, где и сегодня каждый может приобщиться к природе.
-            </p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-
-          <div class="card">
-            <div class="card__img">
-              <p class="card__unlog">Войдите, чтобы сохранять статьи</p>
-              <button class="card__save" type="button"></button>
+              <!-- Пример сохранненной карточки -->
+              <button class="card__save card__save_marked" type="button"></button>
             </div>
             <p class="card__date">2 августа, 2019</p>
             <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
@@ -130,6 +143,9 @@
       <a class="footer__socials footer__socials_fb"></a>
       <a class="footer__rights">&copy2020 Supersite, Powered by News API</a>
     </footer>
+
+    <!-- popup__opened - блокирует и затемняет root -->
+    <div class="popup"></div>
   </div>
   <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>

@@ -14,7 +14,9 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name]/[name].[chunkhash].js'
+    filename: (chunkData) => {
+      return chunkData.chunk.name === 'main' ? '[name].js': '[name]/[name].js';
+    }
   },
 
   module: {
@@ -26,7 +28,7 @@ module.exports = {
     {
       test: /\.css$/i,
       use: [
-        isDev ? { loader: 'style-loader' } : { loader: MiniCssExtractPlugin.loader },
+        isDev ? { loader: 'style-loader' } : { loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' } },
         'css-loader',
         'postcss-loader'
       ]

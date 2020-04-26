@@ -1,0 +1,29 @@
+.articles__keywords {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 30px;
+  margin-left: 104px;
+  margin-bottom: 56px;
+  color: #1a1b22;
+}
+
+@media screen and (max-width: 900px) {
+  .articles__keywords {
+    font-size: 14px;
+    margin-top: 16px;
+    margin-left: 40px;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .articles__keywords {
+    font-size: 18px;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

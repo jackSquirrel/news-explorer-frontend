@@ -1,0 +1,14 @@
+.popup__error {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 15px;
+  visibility: hidden;
+  margin-top: 4px;
+  margin-bottom: 13px;
+  color: #ff0000;
+  height: 14px;
+}
+
+.popup__error:nth-last-of-type(2) {
+  margin-bottom: 0;
+}

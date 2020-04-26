@@ -1,0 +1,19 @@
+@import url(./_hovered/card__rem-saved_hovered.css);
+
+.card__rem-saved {
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  padding: 13px 0;
+  width: 159px;
+  margin: 0;
+  top: 24px;
+  right: 69px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: none;
+}

@@ -1,0 +1,31 @@
+.articles__info {
+  font-family: 'Roboto Slab', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1a1b22;
+  margin-top: 28px;
+  margin-left: 104px;
+  max-width: 530px;
+}
+
+@media screen and (max-width: 900px) {
+  .articles__info {
+    font-size: 30px;
+    line-height: 34px;
+    margin-top: 16px;
+    margin-left: 40px;
+    max-width: 336px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .articles__info {
+    font-size: 30px;
+    line-height: 34px;
+    margin-top: 16px;
+    margin-left: 16px;
+    max-width: 288px;
+  }
+}

@@ -14,9 +14,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: (chunkData) => {
-      return chunkData.chunk.name === 'main' ? '[name].js': '[name]/[name].js';
-    }
+    filename: '[name]/[name].[chunkhash].js'
   },
 
   module: {
@@ -45,7 +43,7 @@ module.exports = {
     },
     {
       test: /\.(eot|ttf|woff|woff2)$/,
-      loader: 'file-loader?name=../vendor/fonts/[name].[ext]'
+      loader: 'file-loader?name=./vendor/fonts/[name].[ext]'
     }
     ]
   },
@@ -63,9 +61,14 @@ module.exports = {
       canPrint: true
     }),
     new HtmlWebpackPlugin({
-      inject: false, // стили НЕ нужно прописывать внутри тегов
-      template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
-      filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+      inject: false,
+      template: './src/index.html',
+      filename: './index.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/secondary/index.html',
+      filename: './secondary/index.html'
     }),
     new WebpackMd5Hash()
   ]

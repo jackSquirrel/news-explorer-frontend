@@ -1,5 +1,7 @@
 .footer__main {
   padding: 0 12px;
+  text-decoration: none;
+  color: #1a1b22;
 }
 
 @media screen and (max-width: 1024px) {

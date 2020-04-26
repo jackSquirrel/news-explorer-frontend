@@ -1,4 +1,5 @@
-.header__opened {
+.header.header__opened {
   z-index: 10;
   background-color: #1a1b22;
+  color: #ffffff;
 }

@@ -2,6 +2,7 @@
   margin-top: 30px;
   margin-right: 32px;
   color: #b6bcbf;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 900px) {

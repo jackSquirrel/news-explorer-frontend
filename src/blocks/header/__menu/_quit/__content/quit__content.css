@@ -1,7 +1,9 @@
+@import url(./_white/quit__content_white.css);
+@import url(./_black/quit__content_black.css);
+
 .quit__content {
   margin: 12px 20px;
   padding-right: 30px;
-  background-image: url(../../../../../images/logout-white.png);
   background-repeat: no-repeat;
   background-position: right;
 }

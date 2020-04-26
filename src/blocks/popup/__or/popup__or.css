@@ -1,0 +1,14 @@
+@import url(./_enter/popup__or_enter.css);
+@import url(./_reg/popup__or_reg.css);
+@import url(./_succes/popup__or_succes.css);
+
+.popup__or {
+  margin: 16px auto 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000000;
+}

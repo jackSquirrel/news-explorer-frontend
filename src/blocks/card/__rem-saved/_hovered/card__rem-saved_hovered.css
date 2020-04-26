@@ -1,0 +1,5 @@
+@media screen and (min-width: 1120px) {
+  .card__rem-saved.card__rem-saved_hovered {
+    display: inline-block;
+  }
+}

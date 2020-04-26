@@ -8,14 +8,14 @@
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../../../images/trash.png);
+  background-image: url(../../../images/trash.svg);
   border-radius: 8px;
   border: 0;
   cursor: pointer;
 }
 
 .card__trash:hover {
-  background-image: url(../../../images/trash-hover.png);
+  background-image: url(../../../images/trash-hover.svg);
 }
 
 @media screen and (max-width: 900px) {

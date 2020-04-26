@@ -11,15 +11,19 @@
   <div class="root">
     <header class="header">
       <p class="header__logo header__black">NewsExplorer</p>
-      <!-- При открытом меню меняется на header__menu-button_close-white -->
+      <!-- При открытом меню меняется на header__menu-button_close -->
       <button class="header__menu-button header__menu-button_open-black" type="button"></button>
       <div class="header__menu header__authorized">
         <a class="header__menu_main header__black" href="../index.html">Главная</a>
         <a class="header__menu_saved header__menu_active-black header__black" href="index.html">Сохраненные статьи</a>
-        <button  class="header__menu_quit header__black_border" type="">
-          <div class="quit__content quit__content_black">
-            <p class="username">Name</p>
-          </div>
+        <button  class="header__menu_quit header__black_border" type="button">
+          Name
+          <picture>
+            <source srcset="<%=require('../images/logout-white.svg').default%>" media="(max-width: 650px)">
+            <source srcset="<%=require('../images/logout.svg').default%>">
+            <img class="header__menu_quit_img" src="<%=require('../images/logout.svg').default%>" alt="quit">
+          </picture>
+
         </button>
       </div>
     </header>
@@ -79,16 +83,18 @@
             </p>
             <p class="card__source">Лента.ру</p>
           </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <div class="footer__menu">
         <a class="footer__main" href="../index.html">Главная</a>
-        <a class="footer__yandex" href="https://praktikum.yandex.ru">Яндекс.Практикум</a>
+        <a class="footer__yandex" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
       </div>
-      <a class="footer__socials footer__socials_github" href="https://github.com/jackSquirrel"></a>
-      <a class="footer__socials footer__socials_fb" href="https://vk.com/jack.squirrel"></a>
-      <a class="footer__rights" href="https://newsapi.org/">&copy2020 Supersite, Powered by News API</a>
+      <a class="footer__socials footer__socials_github" href="https://github.com/jackSquirrel" target="_blank"></a>
+      <a class="footer__socials footer__socials_fb" href="https://vk.com/jack.squirrel" target="_blank"></a>
+      <a class="footer__rights" href="https://newsapi.org/" target="_blank">&copy 2020 Supersite, Powered by News API</a>
     </footer>
   </div>
   <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>

@@ -1,7 +1,7 @@
 .card__save_unsaved {
-  background-image: url(../../../../images/bookmark.png);
+  background-image: url(../../../../images/bookmark.svg);
 }
 
 .card__save_unsaved:hover {
-  background-image: url(../../../../images/bookmark-hover.png);
+  background-image: url(../../../../images/bookmark-hover.svg);
 }

@@ -1,7 +1,7 @@
 .card__img {
   max-width: 400px;
   position: relative;
-  background-image: url('/src/images/image_08.jpg');
+  background-image: url('../../../images/image_08.jpg');
   padding-bottom: 272px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;

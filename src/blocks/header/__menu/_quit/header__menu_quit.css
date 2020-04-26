@@ -1,5 +1,4 @@
-@import url(./username.css);
-@import url(./__content/quit__content.css);
+@import url(./_img/header__menu_quit_img.css);
 
 .header__menu_quit {
   color: #ffffff;
@@ -7,13 +6,15 @@
   border-radius: 100px;
   height: 48px;
   background: none;
-  padding: 0;
+  text-align: center;
+  padding: 0 15px 0 19px;
   cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {
   .header__menu_quit {
     height: 40px;
+    padding: 0 13px 0 15px;
   }
 }
 

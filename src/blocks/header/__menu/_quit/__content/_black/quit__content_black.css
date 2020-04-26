@@ -1,9 +1,0 @@
-.quit__content_black {
-  background-image: url(../../../../../../images/logout.png);
-}
-
-@media screen and (max-width: 650px) {
-  .quit__content_black {
-    background-image: url(../../../../../../images/logout-white.png)
-  }
-}

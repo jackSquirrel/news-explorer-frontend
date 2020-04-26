@@ -1,12 +1,19 @@
 .background-image {
   width: 1440px;
-  background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
+  background-image: url(../../images/phone-back.jpg);
   background-size: contain;
+  background-position: center;
 }
 
 @media screen and (max-width: 1439px){
   .background-image {
     width: 100%;
     background-size: cover;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .background-image {
+    background-image: url(../../images/phone-back-mobile.jpg);
   }
 }

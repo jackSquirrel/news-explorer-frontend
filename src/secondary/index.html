@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Сохраненные статьи">
+  <meta name="author" content="Исмагилов Тимур">
+  <link rel="shortcut icon" href="../<%=require('../images/favicon.svg').default%>">
   <title>NewsExplorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.secondary.css %>">
 </head>
@@ -19,9 +22,9 @@
         <button  class="header__menu_quit header__black_border" type="button">
           Name
           <picture>
-            <source srcset="<%=require('../images/logout-white.svg').default%>" media="(max-width: 650px)">
-            <source srcset="<%=require('../images/logout.svg').default%>">
-            <img class="header__menu_quit_img" src="<%=require('../images/logout.svg').default%>" alt="quit">
+            <source srcset="../<%=require('../images/logout-white.svg').default%>" media="(max-width: 650px)">
+            <source srcset="../<%=require('../images/logout.svg').default%>">
+            <img class="header__menu_quit_img" src="../<%=require('../images/logout.svg').default%>" alt="quit">
           </picture>
 
         </button>
@@ -94,7 +97,7 @@
       </div>
       <a class="footer__socials footer__socials_github" href="https://github.com/jackSquirrel" target="_blank"></a>
       <a class="footer__socials footer__socials_fb" href="https://vk.com/jack.squirrel" target="_blank"></a>
-      <a class="footer__rights" href="https://newsapi.org/" target="_blank">&copy 2020 Supersite, Powered by News API</a>
+      <a class="footer__rights" href="https://newsapi.org/" target="_blank">©2020 Supersite, Powered by News API</a>
     </footer>
   </div>
   <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>

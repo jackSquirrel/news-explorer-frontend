@@ -3,7 +3,7 @@
 }
 
 .footer__socials_github::before {
-  content: url(/src/images/github.svg);
+  content: url(../../../../images/github.svg);
   width: 24px;
   height: 24px;
 }

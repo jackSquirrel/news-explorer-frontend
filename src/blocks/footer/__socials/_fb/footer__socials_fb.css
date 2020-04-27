@@ -3,7 +3,7 @@
 }
 
 .footer__socials_fb::before {
-  content: url(/src/images/fb.svg);
+  content: url(../../../../images/fb.svg);
   width: 24px;
   height: 24px;
 }

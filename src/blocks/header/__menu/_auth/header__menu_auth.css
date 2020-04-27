@@ -1,0 +1,25 @@
+.header__menu_auth {
+  color: #ffffff;
+  border: 1px solid #FFFFFF;
+  border-radius: 100px;
+  background: none;
+  padding: 12px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .header__menu_auth {
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header__menu_auth {
+    display: block;
+    margin-left: 16px;
+    padding-top: 15px;
+    padding-bottom: 17px;
+    width: 288px;
+    margin-top: 22px;
+  }
+}

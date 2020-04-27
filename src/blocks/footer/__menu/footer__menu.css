@@ -1,0 +1,37 @@
+.footer__menu {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #1a1b22;
+  position: absolute;
+  display: inline-block;
+  top: 30px;
+  right: 216px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__menu {
+    top: 21px;
+    right: 136px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__menu {
+    top: 21px;
+    right: 136px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__menu {
+    position: static;
+    display: block;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-left: calc((100% - 288px)/2);
+    text-align: left;
+  }
+}

@@ -1,0 +1,7 @@
+@import url(./__title/articles__title.css);
+@import url(./__info/articles__info.css);
+@import url(./__keywords/articles__keywords.css);
+
+.articles {
+  width: 100%;
+}

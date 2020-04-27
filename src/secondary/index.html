@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Сохраненные статьи">
+  <meta name="author" content="Исмагилов Тимур">
+  <link rel="shortcut icon" href="../<%=require('../images/favicon.svg').default%>">
+  <title>NewsExplorer</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.secondary.css %>">
+</head>
+<body>
+  <div class="root">
+    <header class="header">
+      <p class="header__logo header__black">NewsExplorer</p>
+      <!-- При открытом меню меняется на header__menu-button_close -->
+      <button class="header__menu-button header__menu-button_open-black" type="button"></button>
+      <div class="header__menu header__authorized">
+        <a class="header__menu_main header__black" href="../index.html">Главная</a>
+        <a class="header__menu_saved header__menu_active-black header__black" href="index.html">Сохраненные статьи</a>
+        <button  class="header__menu_quit header__black_border" type="button">
+          Name
+          <picture>
+            <source srcset="../<%=require('../images/logout-white.svg').default%>" media="(max-width: 650px)">
+            <source srcset="../<%=require('../images/logout.svg').default%>">
+            <img class="header__menu_quit_img" src="../<%=require('../images/logout.svg').default%>" alt="quit">
+          </picture>
+
+        </button>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="articles">
+        <p class="articles__title">Сохраненные статьи</p>
+        <h2 class="articles__info">Name, у вас n сохраненных статей</h2>
+        <p class="articles__keywords">По ключевым словам...</p>
+      </section>
+
+      <section class="results">
+        <div class="results__container">
+          <div class="card">
+            <div class="card__img">
+              <p class="card__keyword">Keyword</p>
+              <!-- Класс card__rem-saved_hovered добавляется через js при наведении -->
+              <p class="card__rem-saved card__rem-saved_hovered">Убрать из сохраненных</p>
+              <!-- При помощи js при наведении класс будет изменяться на card__trash_hovered -->
+              <button class="card__trash" type="button"></button>
+            </div>
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальные парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
+              назад здесь начала складываться система национальных парков – охраняемых
+              территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+            <p class="card__source">Лента.ру</p>
+          </div>
+
+          <div class="card">
+            <div class="card__img">
+              <p class="card__keyword">Keyword</p>
+              <p class="card__rem-saved">Убрать из сохраненных</p>
+              <button class="card__trash" type="button"></button>
+            </div>
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальные парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
+              назад здесь начала складываться система национальных парков – охраняемых
+              территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+            <p class="card__source">Лента.ру</p>
+          </div>
+
+          <div class="card">
+            <div class="card__img">
+              <p class="card__keyword">Keyword</p>
+              <p class="card__rem-saved">Убрать из сохраненных</p>
+              <button class="card__trash" type="button"></button>
+            </div>
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальные парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
+              назад здесь начала складываться система национальных парков – охраняемых
+              территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+            <p class="card__source">Лента.ру</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__menu">
+        <a class="footer__main" href="../index.html">Главная</a>
+        <a class="footer__yandex" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+      </div>
+      <a class="footer__socials footer__socials_github" href="https://github.com/jackSquirrel" target="_blank"></a>
+      <a class="footer__socials footer__socials_fb" href="https://vk.com/jack.squirrel" target="_blank"></a>
+      <a class="footer__rights" href="https://newsapi.org/" target="_blank">©2020 Supersite, Powered by News API</a>
+    </footer>
+  </div>
+  <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.secondary.entry %>"></script>
+</body>
+</html>

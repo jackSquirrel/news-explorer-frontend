@@ -1,0 +1,22 @@
+@import url(./__rights/footer__rights.css);
+@import url(./__menu/footer__menu.css);
+@import url(./__main/footer__main.css);
+@import url(./__yandex/footer__yandex.css);
+@import url(./__socials/footer__socials.css);
+
+.footer {
+  width: 1440px;
+  position: relative;
+}
+
+@media screen and (max-width: 1439px) {
+  .footer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    width: 320px;
+  }
+}

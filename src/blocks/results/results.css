@@ -1,0 +1,14 @@
+@import url(./__container/results__container.css);
+@import url(./__title/results__title.css);
+@import url(./__see-more/results__see-more.css);
+
+.results  {
+  width: 1440px;
+  background-color: #f5f6f7;
+}
+
+@media screen and (max-width: 1439px) {
+  .results {
+    width: 100%;
+  }
+}

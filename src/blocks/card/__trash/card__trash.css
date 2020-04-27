@@ -1,0 +1,33 @@
+.card__trash {
+  display: inline-block;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../../images/trash.svg);
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+}
+
+.card__trash:hover {
+  background-image: url(../../../images/trash-hover.svg);
+}
+
+@media screen and (max-width: 900px) {
+  .card__trash {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card__trash {
+    top: 16px;
+    right: 16px;
+  }
+}

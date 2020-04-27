@@ -1,0 +1,17 @@
+.header__menu_active {
+  padding-bottom: 23px;
+  border-bottom: 3px solid #ffffff;
+}
+
+@media screen and (max-width: 900px) {
+  .header__menu_active {
+    padding-bottom: 17px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header__menu_active {
+    padding: 0;
+    border: none;
+  }
+}

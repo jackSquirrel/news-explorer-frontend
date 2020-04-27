@@ -1,0 +1,8 @@
+@import url(./__image/not-found__image.css);
+@import url(./__text/not-found__text.css);
+@import url(./__title/not-found__title.css);
+
+.not-found {
+  width: 100%;
+  background-color: #f5f6f7;
+}

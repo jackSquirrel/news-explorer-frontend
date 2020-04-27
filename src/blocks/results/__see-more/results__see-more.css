@@ -1,0 +1,31 @@
+.results__see-more {
+  display: block;
+  margin: 0 auto 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 18px 84px 22px;
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 80px;
+  color: #1a1b22;
+  cursor: pointer;
+}
+
+.results__see-more:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1000px) {
+  .results__see-more {
+    padding: 15px 60px 17px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .results__see-more {
+    padding: 15px 84px 17px;
+    margin-bottom: 32px;
+  }
+}

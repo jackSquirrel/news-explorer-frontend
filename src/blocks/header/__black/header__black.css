@@ -1,0 +1,9 @@
+@import url(./_border/header__black_border.css);
+
+.header__black {
+  color: #1a1b22;
+}
+
+.header__opened .header__black {
+  color: #ffffff;
+}

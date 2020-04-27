@@ -1,0 +1,21 @@
+.card__img {
+  max-width: 400px;
+  position: relative;
+  background-image: url('../../../images/image_08.jpg');
+  padding-bottom: 272px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+@media screen and (max-width: 1439px) {
+  .card__img {
+    max-width: 100%;
+    padding-bottom: calc(100% / (400 / 272));
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card__img {
+    padding-bottom: 150px;
+  }
+}

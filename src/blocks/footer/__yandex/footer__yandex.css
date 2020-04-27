@@ -1,0 +1,17 @@
+.footer__yandex {
+  padding: 0 12px;
+  text-decoration: none;
+  color: #1a1b22;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__yandex {
+    padding: 0 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__yandex {
+    display: block;
+  }
+}

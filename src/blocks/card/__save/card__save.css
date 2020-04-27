@@ -1,0 +1,31 @@
+@import url(./_unsaved/card__save_unsaved.css);
+@import url(./_marked/card__save__marked.css);
+
+.card__save {
+  display: inline-block;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .card__save {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card__save {
+    top: 16px;
+    right: 16px;
+  }
+}

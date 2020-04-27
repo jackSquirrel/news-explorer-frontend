@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Поисковик новостей по ключевым словам">
+  <meta name="author" content="Исмагилов Тимур">
+  <link rel="shortcut icon" href="<%=require('./images/favicon.svg').default%>">
+  <title>NewsExplorer</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+<body>
+  <div class="root">
+    <div class="background-image">
+
+      <!-- header__opened - класс для открытого меню -->
+      <header class="header">
+        <p class="header__logo">NewsExplorer</p>
+        <!-- При открытом меню меняется на header__menu-button_close при помощи js -->
+        <button class="header__menu-button header__menu-button_open" type="button"></button>
+
+        <!-- Меню для неавторизированного состояния -->
+        <div class="header__menu header__unauthorized invisible">
+          <a class="header__menu_main header__menu_active" href="index.html">Главная</a>
+          <button class="header__menu_auth" type="button">Авторизироваться</button>
+        </div>
+
+        <!-- Меню для авторизированного состояния -->
+        <!-- header__menu_open - открывает меню в мобильной версии -->
+        <div class="header__menu header__authorized">
+          <a class="header__menu_main header__menu_active" href="index.html">Главная</a>
+          <a class="header__menu_saved" href="secondary/index.html">Сохраненные статьи</a>
+          <button  class="header__menu_quit" type="submit">
+            Name
+            <img class="header__menu_quit_img" src="<%=require('./images/logout-white.svg').default%>" alt="quit">
+          </button>
+        </div>
+      </header>
+
+      <section class="search">
+        <h1 class="search__title">Что в мире творится?</h1>
+        <p class="search__subtitle">Найдите самые свежие статьи на любую тему
+          и сохраняйте в своем личном кабинете.</p>
+        <form method="GET" class="search__field">
+          <input class="search__input" placeholder="Введите тему новости" name="searching" type="search">
+          <button class="search__button" type="submit">Искать</button>
+        </form>
+      </section>
+    </div>
+
+    <main class="content">
+      <section class="preloader">
+        <i class="circle-preloader"></i>
+        <p class="preloader__message">Идет поиск новостей...</p>
+      </section>
+
+      <section class="not-found ">
+        <div class="not-found__image"></div>
+        <h4 class="not-found__title">Ничего не найдено</h4>
+        <p class="not-found__text">К сожалению по вашему запросу ничего не найдено.</p>
+      </section>
+
+      <section class="results">
+        <h2 class="results__title">Результаты поиска</h2>
+        <div class="results__container">
+          <div class="card">
+            <div class="card__img">
+              <!-- card__unlog_hovered будет открывать требование войти при наведении через js -->
+              <p class="card__unlog card__unlog_hovered">Войдите, чтобы сохранять статьи</p>
+              <!-- При помощи js при наведении класс будет изменяться на card__save_hovered -->
+              <button class="card__save card__save_unsaved" type="button"></button>
+            </div>
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальные парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
+              назад здесь начала складываться система национальных парков – охраняемых
+              территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+            <p class="card__source">Лента.ру</p>
+          </div>
+
+          <div class="card">
+            <div class="card__img">
+              <p class="card__unlog">Войдите, чтобы сохранять статьи</p>
+              <button class="card__save card__save_unsaved" type="button"></button>
+            </div>
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальные парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
+              назад здесь начала складываться система национальных парков – охраняемых
+              территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+            <p class="card__source">Лента.ру</p>
+          </div>
+
+          <div class="card">
+            <div class="card__img">
+              <p class="card__unlog card__unlog_hovered">Войдите, чтобы сохранять статьи</p>
+              <button class="card__save card__save_unsaved" type="button"></button>
+            </div>
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальные парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
+              назад здесь начала складываться система национальных парков – охраняемых
+              территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+            <p class="card__source">Лента.ру</p>
+          </div>
+
+          <div class="card">
+            <div class="card__img">
+              <p class="card__unlog">Войдите, чтобы сохранять статьи</p>
+              <!-- Пример сохранненной карточки -->
+              <button class="card__save card__save_marked" type="button"></button>
+            </div>
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+            <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
+            </p>
+            <p class="card__source">риа</p>
+          </div>
+        </div>
+        <button class="results__see-more" type="button">Показать еще</button>
+      </section>
+
+      <section class="author">
+        <img class="author__image" src="<%=require('./images/me.jpg').default%>" alt="My foto">
+        <div class="author__content">
+          <h2 class="author__title">Об авторе</h2>
+          <p class="author__text">
+            Всем привет! Меня зовут Исмагилов Тимур, я закончил Яндекс.Практикум, а это мой
+            дипломный проект. Теперь я создаю крутые сайты, и это пример одного из них.
+          </p>
+          <p class="author__text">
+            Если хотите предложить мне работу - ссылки внизу страницы!
+          </p>
+          </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__menu">
+        <a class="footer__main" href="index.html">Главная</a>
+        <a class="footer__yandex" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+      </div>
+      <a class="footer__socials footer__socials_github" href="https://github.com/jackSquirrel" target="_blank"></a>
+      <a class="footer__socials footer__socials_fb" href="https://vk.com/jack.squirrel" target="_blank"></a>
+      <a class="footer__rights" href="https://newsapi.org/" target="_blank">©2020 Supersite, Powered by News API</a>
+    </footer>
+
+
+    <!-- Ниже представленны экземпляры форм попапов, разметках которых будет
+    храниться в JS коде, таким образом, в конечной разметке страницы ошибок валидатора,
+    связанных с повторяющимися id email и password не будет -->
+
+    <!-- popup__opened - блокирует и затемняет root,
+         чтобы просмотреть форму - удалить invisible -->
+    <div class="popup">
+      <!-- экземпляр попапа для входа (открывается через js) -->
+      <div class="popup__content invisible">
+        <img src="<%=require('./images/back.svg').default%>" alt="close" class="popup__close">
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" name="new" novalidate>
+            <p class="popup__input-title">Email</p>
+            <input type="email" name="email" class="popup__input popup__input_type_email" placeholder="Введите почту" required>
+            <!-- popup__is-not-valid - для активации ошибки -->
+            <span id = "email" class="popup__error"></span>
+            <p class="popup__input-title">Пароль</p>
+            <input type="password" name="password" class="popup__input popup__input_type_password" placeholder="Введите пароль" required>
+            <span id = "password" class = "popup__error"></span>
+            <span id = "entry" class = "popup__button-error"></span>
+            <!-- popup__button_active - стили активной кнопки -->
+            <button type="submit" name="entry" class="popup__button" disabled>Войти</button>
+            <p class="popup__or">или <button type="button" class="popup__or_reg">Зарегистрироваться</button></p>
+        </form>
+      </div>
+      <!-- экземпляр попапа для регистрации (открывается через js) -->
+      <div class="popup__content invisible">
+        <img src="<%=require('./images/back.svg').default%>" alt="close" class="popup__close">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" name="new" novalidate>
+            <p class="popup__input-title">Email</p>
+            <input type="email" name="email" class="popup__input popup__input_type_email" placeholder="Введите почту" required>
+            <!-- popup__is-not-valid - для активации ошибки -->
+            <span id = "email" class="popup__error"></span>
+            <p class="popup__input-title">Пароль</p>
+            <input type="password" name="password" class="popup__input popup__input_type_password" placeholder="Введите пароль" required>
+            <span id = "password" class = "popup__error"></span>
+            <p class="popup__input-title">Имя</p>
+            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Введите имя" required>
+            <span id = "name" class = "popup__button-error"></span>
+            <!-- popup__button_active - стили активной кнопки -->
+            <span id = "reg" class = "popup__button-error"></span>
+            <button type="submit" name="reg" class="popup__button" disabled>Зарегистрироваться</button>
+            <p class="popup__or">или <button type="button" class="popup__or_enter">Войти</button></p>
+        </form>
+      </div>
+      <!-- экземпляр попапа успешной регистрации -->
+      <div class="popup__content invisible">
+        <img src="<%=require('./images/back.svg').default%>" alt="close" class="popup__close">
+        <h3 class="popup__title popup__title_succes">Пользователь успешно зарегистрирован!</h3>
+        <button type="button" class="popup__or_succes">Выполнить вход</button>
+      </div>
+    </div>
+  </div>
+  <script type = "module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

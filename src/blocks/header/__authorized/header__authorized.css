@@ -1,0 +1,5 @@
+@media screen and (max-width: 650px) {
+  .header__authorized {
+    min-height: 230px;
+  }
+}

@@ -4,7 +4,7 @@ export default class PopupSignIn extends Popup {
   constructor(props){
     super(props);
     this._validation = props.validation;
-    this._signUp = props.signUp;
+    this._openSignUp = props.openSignUp;
   }
 
   _popupSettings(){
@@ -21,7 +21,7 @@ export default class PopupSignIn extends Popup {
         event: 'click',
         callback: () => {
           this.close();
-          this._signUp();
+          this._openSignUp();
         }
       }
     ]);

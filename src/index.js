@@ -3,10 +3,17 @@ import {popupSignIn, popupSignUp, popupSuccess} from "./js/popupContent";
 import PopupSignUp from "./js/Components/PopupSignUp";
 import PopupSignIn from "./js/Components/PopupSignIn";
 import Validation from "./js/Components/Validation";
+import Api from "./js/Api/MainApi";
 
 // ПЕРЕМЕННЫЕ
 const signUpButton = document.querySelector('.header__menu_auth');
-export const popup = document.querySelector('.popup');
+const popup = document.querySelector('.popup');
+const serverUrl = NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://localhost:3000';
+
+// Взаимодействие с сервером
+const api = new Api({
+  baseUrl: serverUrl
+});
 
 // Валидация введенных данных
 const validation = new Validation({
@@ -18,7 +25,7 @@ const validation = new Validation({
 const signInPopup = new PopupSignIn({
   content: popupSignIn,
   popup,
-  signUp: () => {
+  openSignUp: () => {
     signUpPopup.open()
   },
   validation: (form) => {
@@ -31,9 +38,12 @@ signInPopup.render();
 const signUpPopup = new PopupSignUp({
   content: popupSignUp,
   popup,
-  signIn: () => { signInPopup.open() } ,
+  openSignIn: () => { signInPopup.open() } ,
   validation: (form) => {
     validation.popupFormDefault(form);
+  },
+  signUpCallback: () => {
+    return api.signup(email, name, password);
   }
 });
 signUpPopup.render();

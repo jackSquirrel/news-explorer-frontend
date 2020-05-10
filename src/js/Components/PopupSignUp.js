@@ -6,6 +6,7 @@ export default class PopupSignUp extends Popup {
     this._validation = props.validation;
     this._openSignIn = props.openSignIn;
     this._signUpCallback = props.signUpCallback;
+    this._openSuccess = props.openSuccess;
   }
 
   _popupSettings(){
@@ -39,9 +40,9 @@ export default class PopupSignUp extends Popup {
   _signUp(event) {
     event.preventDefault();
     this._signUpCallback(this.popupForm.elements.email.value, this.popupForm.elements.name.value, this.popupForm.elements.password.value)
-      .then((res)=> {
-        console.log('Успех!');
+      .then(()=> {
         this.close();
+        this._openSuccess();
       });
   }
 }

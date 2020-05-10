@@ -41,7 +41,7 @@ const popupSignUp = `
 </div>`;
 
 const popupSuccess = `
-<div class="popup__content invisible">
+<div class="popup__content">
   <img src="./images/back.svg" alt="close" class="popup__close">
   <h3 class="popup__title popup__title_succes">Пользователь успешно зарегистрирован!</h3>
   <button type="button" class="popup__or_succes">Выполнить вход</button>

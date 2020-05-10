@@ -6,9 +6,8 @@ export default class MainApi {
   signup(email, name, password) {
     return fetch(`${this._link}/signup`, {
       method: 'POST',
-      credentials: 'include',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         email: email,
@@ -17,13 +16,35 @@ export default class MainApi {
       })
     })
     .then((res)=> {
-      if(res.ok){
-        console.log('ok');
+      if(res.ok) {
         return res.json();
       }
+      return Promise.reject(res);
     })
     .catch((err)=> {
       console.log(`Ошибка: ${err}`);
+    })
+  }
+
+  signin(email, password) {
+    return fetch(`${this._link}/signin`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    })
+    .then((res)=> {
+      if(res.ok) {
+        return res.json();
+      }
+      return Promise.reject(res);
+    })
+    .catch((err)=> {
+      console.log(err)
     })
   }
 }

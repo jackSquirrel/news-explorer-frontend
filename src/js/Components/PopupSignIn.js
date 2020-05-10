@@ -5,6 +5,7 @@ export default class PopupSignIn extends Popup {
     super(props);
     this._validation = props.validation;
     this._openSignUp = props.openSignUp;
+    this._signInCallback = props.signInCallback;
   }
 
   _popupSettings(){
@@ -23,10 +24,24 @@ export default class PopupSignIn extends Popup {
           this.close();
           this._openSignUp();
         }
+      },
+      {
+        element: this.popupForm,
+        event: 'submit',
+        callback: (event)=> { this._signIn(event) }
       }
     ]);
 
     this.popupElement.querySelector('.popup__button').setAttribute('disabled', true);
     this.popupElement.querySelector('.popup__button').classList.remove('popup__button_active');
+  }
+
+  _signIn(event) {
+    event.preventDefault();
+    this._signInCallback(this.popupForm.elements.email.value, this.popupForm.elements.password.value)
+      .then(()=> {
+        this.close();
+        console.log('success!');
+      })
   }
 }

@@ -4,11 +4,12 @@ import PopupSignUp from "./js/Components/PopupSignUp";
 import PopupSignIn from "./js/Components/PopupSignIn";
 import Validation from "./js/Components/Validation";
 import Api from "./js/Api/MainApi";
+import PopupSuccess from "./js/Components/PopupSuccess";
 
 // ПЕРЕМЕННЫЕ
 const signUpButton = document.querySelector('.header__menu_auth');
 const popup = document.querySelector('.popup');
-const serverUrl = NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://localhost:3000';
+const serverUrl = 'https://api.explorenews.gq';
 
 // Взаимодействие с сервером
 const api = new Api({
@@ -30,19 +31,31 @@ const signInPopup = new PopupSignIn({
   },
   validation: (form) => {
     validation.popupFormDefault(form);
+  },
+  signInCallback: (email, password)=> {
+    return api.signin(email, password);
   }
 });
 signInPopup.render();
+
+// Попап успешной регистрации
+const successPopup = new PopupSuccess({
+  content: popupSuccess,
+  popup,
+  openSignIn: () => { signInPopup.open() }
+});
+successPopup.render();
 
 // Попап для регистрации
 const signUpPopup = new PopupSignUp({
   content: popupSignUp,
   popup,
-  openSignIn: () => { signInPopup.open() } ,
+  openSignIn: () => { signInPopup.open() },
+  openSuccess: () => { successPopup.open() },
   validation: (form) => {
     validation.popupFormDefault(form);
   },
-  signUpCallback: () => {
+  signUpCallback: (email, name, password) => {
     return api.signup(email, name, password);
   }
 });
@@ -50,4 +63,4 @@ signUpPopup.render();
 
 //СЛУШАТЕЛИ СОБЫТИЙ И ВЫЗОВЫ ФУНКЦИЙ
 //Открытие попапа по нажатию на кнопку
-signUpButton.addEventListener('click', signUpPopup.open);
+signUpButton.addEventListener('click', signInPopup.open);

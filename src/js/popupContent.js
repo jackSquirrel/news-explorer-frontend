@@ -32,7 +32,7 @@ const popupSignUp = `
     <span id = "password" class = "popup__error"></span>
     <p class="popup__input-title">Имя</p>
     <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Введите имя" required>
-    <span id = "name" class = "popup__button-error"></span>
+    <span id = "name" class = "popup__error"></span>
     <!-- popup__button_active - стили активной кнопки -->
     <span id = "reg" class = "popup__button-error"></span>
     <button type="submit" name="reg" class="popup__button" disabled>Зарегистрироваться</button>

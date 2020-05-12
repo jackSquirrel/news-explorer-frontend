@@ -11,6 +11,7 @@ export default class PopupSignUp extends Popup {
 
   _popupSettings(){
     this._validation(this.popupForm);
+    this.popupElement.querySelector('.popup__button-error').textContent = '';
 
     this._setListeners([
       {
@@ -39,10 +40,17 @@ export default class PopupSignUp extends Popup {
 
   _signUp(event) {
     event.preventDefault();
+    const error = this.popupElement.querySelector('.popup__button-error');
+
     this._signUpCallback(this.popupForm.elements.email.value, this.popupForm.elements.name.value, this.popupForm.elements.password.value)
-      .then(()=> {
-        this.close();
-        this._openSuccess();
+      .then((res)=> {
+        if(res.message) {
+          error.textContent = res.message;
+        } else {
+          error.textContent = '';
+          this.close();
+          this._openSuccess();
+        }
       });
   }
 }

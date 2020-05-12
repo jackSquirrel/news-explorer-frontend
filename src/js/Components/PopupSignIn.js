@@ -10,6 +10,7 @@ export default class PopupSignIn extends Popup {
 
   _popupSettings(){
     this._validation(this.popupForm);
+    this.popupElement.querySelector('.popup__button-error').textContent = '';
 
     this._setListeners([
       {
@@ -38,10 +39,17 @@ export default class PopupSignIn extends Popup {
 
   _signIn(event) {
     event.preventDefault();
+    const error = this.popupElement.querySelector('.popup__button-error');
     this._signInCallback(this.popupForm.elements.email.value, this.popupForm.elements.password.value)
-      .then(()=> {
-        this.close();
-        console.log('success!');
+      .then((res)=> {
+        if(res.message != 'Вы успешно авторизированы!'){
+          error.textContent = res.message;
+          error.classList.add('.popup__is-not-valid');
+        } else {
+          error.textContent = '';
+          error.classList.remove('.popup__is-not-valid');
+          this.close();
+        }
       })
   }
 }

@@ -16,7 +16,7 @@ export default class BaseComponent {
 
   _clearListeners() {
     this._listeners.forEach(({element, event, callback}) => {
-      element.removeListener(event, callback);
+      element.removeEventListener(event, callback);
     })
   }
 }

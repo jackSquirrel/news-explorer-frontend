@@ -22,7 +22,8 @@ export default class MainApi {
       return Promise.reject(res);
     })
     .catch((err)=> {
-      console.log(`Ошибка: ${err}`);
+      console.log('Ошибка: ' + err.message);
+      return err.json();
     })
   }
 
@@ -44,7 +45,8 @@ export default class MainApi {
       return Promise.reject(res);
     })
     .catch((err)=> {
-      console.log(err)
+      console.log('Ошибка: ' + err.message);
+      return err.json();
     })
   }
 }

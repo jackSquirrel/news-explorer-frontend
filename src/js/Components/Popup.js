@@ -20,6 +20,7 @@ export default class Popup extends BaseComponent {
 
   //Закртытие Попапа
   close() {
+    this._clearListeners();
     this._popup.removeChild(this.popupElement);
     this._popup.classList.remove('popup__opened');
   }

@@ -27,6 +27,7 @@ export default class Popup extends BaseComponent {
 
   //Открытие Попапа
   open() {
+
     this._popup.classList.add('popup__opened');
     this._popup.appendChild(this.popupElement);
     this._popupSettings();

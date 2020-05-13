@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+.header__unauthorized .header__menu_quit {
+  display: none;
+}
+
 @media screen and (max-width: 900px) {
   .header__menu_quit {
     height: 40px;

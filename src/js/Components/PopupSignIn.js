@@ -6,9 +6,12 @@ export default class PopupSignIn extends Popup {
     this._validation = props.validation;
     this._openSignUp = props.openSignUp;
     this._signInCallback = props.signInCallback;
+    this._headerRender = props.headerRender;
+    this._closeHeader = props.closeHeader;
   }
 
   _popupSettings(){
+    this._closeHeader();
     this._validation(this.popupForm);
     this.popupElement.querySelector('.popup__button-error').textContent = '';
 
@@ -49,6 +52,7 @@ export default class PopupSignIn extends Popup {
           error.textContent = '';
           error.classList.remove('.popup__is-not-valid');
           this.close();
+          this._headerRender(true);
         }
       })
   }

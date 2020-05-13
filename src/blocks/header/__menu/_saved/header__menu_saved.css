@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+.header__unauthorized .header__menu_saved {
+  display: none;
+}
+
 @media screen and (max-width: 900px) {
   .header__menu_saved {
     margin-top: 22px;

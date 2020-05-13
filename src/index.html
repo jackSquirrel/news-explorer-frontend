@@ -20,19 +20,15 @@
         <!-- При открытом меню меняется на header__menu-button_close при помощи js -->
         <button class="header__menu-button header__menu-button_open" type="button"></button>
 
-        <!-- Меню для неавторизированного состояния -->
+        <!-- header__unauthorized - меню для неавторизированного состояния
+            header__authorized - меню для неавторизированного состояния -->
+
         <div class="header__menu header__unauthorized">
           <a class="header__menu_main header__menu_active" href="index.html">Главная</a>
           <button class="header__menu_auth" type="button">Авторизироваться</button>
-        </div>
-
-        <!-- Меню для авторизированного состояния -->
-        <!-- header__menu_open - открывает меню в мобильной версии -->
-        <div class="header__menu header__authorized invisible">
-          <a class="header__menu_main header__menu_active" href="index.html">Главная</a>
           <a class="header__menu_saved" href="secondary/index.html">Сохраненные статьи</a>
           <button  class="header__menu_quit" type="submit">
-            Name
+            <span class="header__menu_quit-name">Name</span>
             <img class="header__menu_quit_img" src="<%=require('./images/logout-white.svg').default%>" alt="quit">
           </button>
         </div>

@@ -8,17 +8,30 @@ import NewsApi from "./js/Api/NewsApi";
 import PopupSuccess from "./js/Components/PopupSuccess";
 import SearchForm from "./js/Components/SearchForm";
 import Card from "./js/Components/Card";
+import Header from "./js/Components/Header";
 
 // ПЕРЕМЕННЫЕ
 const signUpButton = document.querySelector('.header__menu_auth');
 const popup = document.querySelector('.popup');
 const serverUrl = 'https://api.explorenews.gq';
 const container = document.querySelector('.results__container');
+const headerContainer = document.querySelector('.header');
+const headerButton = headerContainer.querySelector('.header__menu-button');
 
 // Взаимодействие с сервером
 const api = new Api({
   baseUrl: serverUrl
 });
+
+const header = new Header({
+  headerContainer,
+  popup,
+  headerButton,
+  getUser: ()=> {
+    return api.getUserData();
+  }
+});
+header.headerSettings();
 
 // Взаимодействие с NewsApi
 const newsApi = new NewsApi();
@@ -33,6 +46,9 @@ const validation = new Validation({
 const signInPopup = new PopupSignIn({
   content: popupSignIn,
   popup,
+  closeHeader: () => {
+    header.headerClose();
+  },
   openSignUp: () => {
     signUpPopup.open()
   },
@@ -41,6 +57,9 @@ const signInPopup = new PopupSignIn({
   },
   signInCallback: (email, password)=> {
     return api.signin(email, password);
+  },
+  headerRender: (isLoggedIn)=> {
+    header.render(isLoggedIn);
   }
 });
 signInPopup.render();

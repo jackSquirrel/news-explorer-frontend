@@ -33,6 +33,7 @@ export default class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({
         email: email,
         password: password
@@ -49,4 +50,22 @@ export default class MainApi {
       return err.json();
     })
   }
+
+  getUserData(){
+    return fetch(`${this._link}/users/me`, {
+      method: 'GET',
+      credentials: 'include'
+    })
+    .then((res)=> {
+      if(res.ok){
+        return res.json();
+      }
+      return Promise.reject(res);
+    })
+    .catch((err)=> {
+      console.log('Ошибка: ' + err.statusCode);
+      return err.json();
+    })
+  }
+
 }

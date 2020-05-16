@@ -1,6 +1,5 @@
 @import url(./_open/header__menu-button_open.css);
 @import url(./_close/header__menu-button_close.css);
-@import url(./_open/header__menu-button_open-black.css);
 
 .header__menu-button {
   display: none;

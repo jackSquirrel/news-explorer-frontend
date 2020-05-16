@@ -12,6 +12,9 @@ export default class Header extends BaseComponent {
 
   // Открыть header на мобильных разрешениях
   _headerOpen(){
+    if(this._color === 'white'){
+      this._headerContainer.classList.remove('header__black')
+    }
     this._headerContainer.classList.add('header__opened');
     this._headerButton.classList.add('header__menu-button_close');
     this._headerButton.classList.remove('header__menu-button_open');
@@ -19,35 +22,68 @@ export default class Header extends BaseComponent {
 
   // Закрыть header на мобильных разрешениях
   headerClose(){
+    if(this._color === 'white'){
+      this._headerContainer.classList.add('header__black')
+    }
     this._headerContainer.classList.remove('header__opened');
     this._headerButton.classList.remove('header__menu-button_close');
     this._headerButton.classList.add('header__menu-button_open');
   }
 
+  // Выйти из текущего сеанса
+  _quit(name){
+    const cookie_date = new Date();
+    cookie_date.setTime(cookie_date.getTime() - 1);
+    document.cookie = name += "=; expires=" + cookie_date.toGMTString();
+    this.render(false);
+  }
+
+  _headerMenuMobile(button){
+    if(button.classList.contains('header__menu-button_open')){
+      this._headerOpen();
+      this._popup.classList.add('popup__opened');
+    }
+    else {
+      this.headerClose();
+      this._popup.classList.remove('popup__opened');
+    };
+  }
+
   // Установка начальных конфигураций для header
   headerSettings(){
-    this._getUser()
+    const button = this._headerContainer.querySelector('.header__menu-button');
+
+    if(this._color == 'black'){
+      this._getUser()
       .then((res)=> {
         if(res){
           this.render(true);
         }
       })
-    const button = this._headerContainer.querySelector('.header__menu-button');
+    }
+    else {
+      this._getUser()
+      .then((res)=> {
+        this._headerContainer.querySelector('.header__menu_quit-name').textContent = res.name;
+      })
+    }
+
     this._setListeners([
       {
         element: button,
         event: 'click',
         callback: ()=> {
-          if(button.classList.contains('header__menu-button_open')){
-            this._headerOpen();
-            this._popup.classList.add('popup__opened');
-          }
-          else {
-            this.headerClose();
-            this._popup.classList.remove('popup__opened');
-          };
+          this._headerMenuMobile(button);
         }
-      }])
+      },
+      {
+        element: this._headerContainer.querySelector('.header__menu_quit'),
+        event: 'click',
+        callback: ()=> {
+          this._quit('jwt');
+        }
+      }
+    ])
   }
 
   //Отрисовка header

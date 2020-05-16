@@ -3,9 +3,18 @@
   border-bottom: 3px solid #ffffff;
 }
 
+.header__black .header__menu_active {
+  border-color: #1a1b22;
+  padding-bottom: 26px;
+}
+
 @media screen and (max-width: 900px) {
   .header__menu_active {
     padding-bottom: 17px;
+  }
+
+  .header__black .header__menu_active {
+    padding-bottom: 20px;
   }
 }
 

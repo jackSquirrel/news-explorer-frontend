@@ -4,19 +4,25 @@ export default class CardList extends BaseComponent {
   constructor(props){
     super(props);
     this._cards = props.cards;
-    this._keyword = props.keyword;
+    this._keyword = props.keyword || null;
     this._container = props.cardsContainer;
     this._cardCallback = props.cardCallback;
-    this._button = props.button;
-    this._getUserData = props.getUserData;
-    this._isLoggedIn = props.isLoggedIn;
+    this._button = props.button || null;
+    this._getUserData = props.getUserData || null;
+    this._isLoggedIn = props.isLoggedIn || null;
     this._curCard = 0;
   }
 
-  // Добавление карточки в список
+  // Добавление карточки в список из API
   _addCard(card){
-    this._container.appendChild(this._cardCallback(this._keyword, card.urlToImage, card.url, card.publishedAt, card.title, card.description, card.source.name, this._isLoggedIn)
+    this._container.appendChild(this._cardCallback(this._keyword, card.urlToImage, card.url, card.publishedAt, card.title, card.description, card.source.name, this._isLoggedIn, null)
     .render())
+  }
+
+  // Добавление карточек в список сохраненных из Базы Данных
+  _addCardInSaveList(card){
+    this._container.appendChild(this._cardCallback(card.keyword, card.image, card.link, card.date, card.title, card.text, card.source, this._isLoggedIn, card._id)
+    .renderSavedCard())
   }
 
   // Логика конпки "Показать еще"
@@ -52,5 +58,12 @@ export default class CardList extends BaseComponent {
       }
     }
     this._curCard += 3;
+  }
+
+  // Отрисовка всех карточек сразу
+  renderAll() {
+    this._cards.forEach((card)=> {
+      this._addCardInSaveList(card)
+    })
   }
 }

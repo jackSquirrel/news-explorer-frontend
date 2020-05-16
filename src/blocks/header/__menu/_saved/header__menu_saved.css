@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+.header__black .header__menu_saved {
+  color: #1a1b22;
+}
+
 .header__unauthorized .header__menu_saved {
   display: none;
 }

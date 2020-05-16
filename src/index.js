@@ -28,6 +28,7 @@ const api = new Api({
 
 // Отрисовка header
 const header = new Header({
+  color: 'black',
   headerContainer,
   popup,
   headerButton,

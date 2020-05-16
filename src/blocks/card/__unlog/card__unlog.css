@@ -2,7 +2,6 @@
 
 .card__unlog {
   width: 182px;
-  display: inline-block;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 10px;
@@ -17,4 +16,8 @@
   top: 24px;
   right: 69px;
   display: none;
+}
+
+div>.card__save_unsaved:hover .card__unlog{
+  display: inline-block;
 }

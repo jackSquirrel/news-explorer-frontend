@@ -10,19 +10,28 @@ export default class Header extends BaseComponent {
     this._headerButton = props.headerButton;
   }
 
+  // Открыть header на мобильных разрешениях
   _headerOpen(){
     this._headerContainer.classList.add('header__opened');
     this._headerButton.classList.add('header__menu-button_close');
     this._headerButton.classList.remove('header__menu-button_open');
   }
 
+  // Закрыть header на мобильных разрешениях
   headerClose(){
     this._headerContainer.classList.remove('header__opened');
     this._headerButton.classList.remove('header__menu-button_close');
     this._headerButton.classList.add('header__menu-button_open');
   }
 
+  // Установка начальных конфигураций для header
   headerSettings(){
+    this._getUser()
+      .then((res)=> {
+        if(res){
+          this.render(true);
+        }
+      })
     const button = this._headerContainer.querySelector('.header__menu-button');
     this._setListeners([
       {

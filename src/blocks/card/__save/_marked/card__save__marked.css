@@ -1,3 +1,7 @@
-.card__save_marked {
+.card__save.card__save_marked {
+  background-image: url(../../../../images/bookmark-marked.svg);
+}
+
+.card__save.card__save_marked:hover {
   background-image: url(../../../../images/bookmark-marked.svg);
 }

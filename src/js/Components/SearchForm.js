@@ -8,7 +8,10 @@ export default class SearchForm extends BaseComponent {
     this._preloader = props.preloader;
     this._notFound = props.notFound;
     this._container = props.container;
-    this._addCardCallback = props.addCardCallback;
+    this._addCardsInList = props.resultsList;
+    this._resultsSection = props.resultsSection;
+    this._getUser = props.getUser;
+    this._resultsElement = null;
   }
 
   settings() {
@@ -28,14 +31,28 @@ export default class SearchForm extends BaseComponent {
 
     this._searchCallback(this._form.elements.searching.value)
       .then((res)=> {
+        console.log(res);
+        if(this._resultsElement != null){
+          this._resultsElement._clearListeners();
+        }
+        this._container.innerHTML = '';
         this._preloader.classList.add('invisible');
-          console.log(res);
+        this._resultsSection.classList.add('invisible');
         if (res.totalResults === 0) {
           this._notFound.classList.remove('invisible');
-        } else {
-          res.articles.forEach((card)=> {
-            this._container.appendChild(this._addCardCallback(card.urlToImage, card.publishedAt, card.title, card.description, card.source.name).render());
-          })
+        }
+        else {
+          this._resultsSection.classList.remove('invisible');
+          this._getUser()
+            .then((result)=>{
+              if(result){
+                this._resultsElement = this._addCardsInList(res.articles, this._form.elements.searching.value, true);
+              }
+              else {
+                this._resultsElement = this._addCardsInList(res.articles, this._form.elements.searching.value, false);
+              }
+              this._resultsElement.listSettings();
+            })
         }
       })
   }

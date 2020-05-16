@@ -8,6 +8,7 @@ import NewsApi from "./js/Api/NewsApi";
 import PopupSuccess from "./js/Components/PopupSuccess";
 import SearchForm from "./js/Components/SearchForm";
 import Card from "./js/Components/Card";
+import CardList from "./js/Components/CardList";
 import Header from "./js/Components/Header";
 
 // ПЕРЕМЕННЫЕ
@@ -15,14 +16,17 @@ const signUpButton = document.querySelector('.header__menu_auth');
 const popup = document.querySelector('.popup');
 const serverUrl = 'https://api.explorenews.gq';
 const container = document.querySelector('.results__container');
+const resultsSection = document.querySelector('.results');
 const headerContainer = document.querySelector('.header');
 const headerButton = headerContainer.querySelector('.header__menu-button');
+const buttonSeeMore = document.querySelector('.results__see-more')
 
 // Взаимодействие с сервером
 const api = new Api({
   baseUrl: serverUrl
 });
 
+// Отрисовка header
 const header = new Header({
   headerContainer,
   popup,
@@ -92,13 +96,56 @@ const searchForm = new SearchForm({
   form: document.querySelector('.search__field'),
   preloader: document.querySelector('.preloader'),
   notFound: document.querySelector('.not-found'),
-  container: document.querySelector('.results__container'),
-  searchCallback: (word) => { return newsApi.getNews(word) },
-  addCardCallback: (img, date, title, text, source) => {
-    return new Card({img, date, title, text, source})
-  }
+  container,
+  resultsSection,
+  searchCallback: (word) => {
+    return newsApi.getNews(word)
+  },
+  getUser: ()=> {
+    return api.getUserData()
+  },
+  resultsList: createNewList
 });
 searchForm.settings();
+
+// ФУНКЦИИ
+// Создание экземпляра карточки со статьей
+function createNewCard(keyword, img, link, date, title, text, source, isLoggedIn){
+  return new Card({
+    keyword,
+    img,
+    link,
+    date,
+    title,
+    text,
+    source,
+    isLoggedIn,
+    saveArticle: (keyword, title, text, date, source, link, image)=> {
+      return api.saveArticle(keyword, title, text, date, source, link, image);
+    },
+    deleteArticle: (articleId)=> {
+      return api.deleteArticle(articleId);
+    },
+    getArticles: ()=> {
+      return api.getArticles();
+    }
+  })
+}
+
+// Создание экземпляра блока с результатами поиска карточек
+function createNewList(cards, keyword, isLoggedIn){
+  return new CardList({
+    cards,
+    keyword,
+    isLoggedIn,
+    button: buttonSeeMore,
+    cardsContainer: container,
+    getUserData: () => {
+      return api.getUserData();
+    },
+    cardCallback: createNewCard
+  });
+}
 
 //СЛУШАТЕЛИ СОБЫТИЙ И ВЫЗОВЫ ФУНКЦИЙ
 //Открытие попапа по нажатию на кнопку

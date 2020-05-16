@@ -6,7 +6,7 @@ export default class Card extends BaseComponent {
     this._keyword = props.keyword;
     this._img = props.img;
     this._link = props.link;
-    this._date = props.date;
+    this._date = props.date.slice(0, 10);
     this._title = props.title;
     this._text = props.text;
     this._source = props.source;
@@ -14,6 +14,7 @@ export default class Card extends BaseComponent {
     this._saveArticle = props.saveArticle;
     this._deleteArticle = props.deleteArticle;
     this._getArticles = props.getArticles;
+    this._monthFormat = props.monthFormat;
   }
 
   // Действие при нажатии по иконке
@@ -55,11 +56,24 @@ export default class Card extends BaseComponent {
 
   }
 
+  // Перевод даты в нужный формат
+  _dateFormat(date) {
+    let newDate = '';
+    if(date[0] == '0'){
+      newDate += date[1]
+    }
+    else {
+      newDate += date.slice(-2, )
+    }
+    newDate += this._monthFormat(date.slice(5, 7)) + date.slice(0, 4);
+    return newDate;
+  }
+
   // Разметка иконки карточки
   _renderIcon() {
     if(!this._isLoggedIn) {
       return `<p class="card__unlog">Войдите, чтобы сохранять статьи</p>
-      <button class="card__save" type="button" disabled></button>`
+      <button class="card__save" type="button"></button>`
     }
     else {
       return `<button class="card__save card__save_logged" type="button"></button>`
@@ -71,7 +85,7 @@ export default class Card extends BaseComponent {
     return `<div class="card">
     <div class="card__img" style="background-image: url('${this._img}')">` + this._renderIcon() +
     `</div>
-    <p class="card__date">${this._date}</p>
+    <p class="card__date">${this._dateFormat(this._date)}</p>
     <h3 class="card__title">${this._title}</h3>
     <p class="card__text">${this._text}</p>
     <p class="card__source">${this._source}</p>
@@ -105,6 +119,24 @@ export default class Card extends BaseComponent {
           this._saveOrDelete(event);
         }
       }
+      ])
+    }
+    else {
+      this._setListeners([
+        {
+          element: this._element.querySelector('.card__save'),
+          event: 'mouseover',
+          callback: ()=> {
+            this._element.querySelector('.card__unlog').classList.add('card__unlog_hovered');
+          }
+        },
+        {
+          element: this._element.querySelector('.card__save'),
+          event: 'mouseout',
+          callback: ()=> {
+            this._element.querySelector('.card__unlog').classList.remove('card__unlog_hovered');
+          }
+        }
       ])
     }
     return this._element;

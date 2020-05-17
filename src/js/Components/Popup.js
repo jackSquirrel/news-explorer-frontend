@@ -18,6 +18,20 @@ export default class Popup extends BaseComponent {
     return newTag;
   }
 
+  //Закрытие по нажатию на фон
+  _closeByMousedown(event){
+    if(event.target.classList.contains('popup')){
+      this.close();
+    }
+  }
+
+  _closeByEsc(event){
+    const key = event.key;
+    if(key == 'Escape'){
+      this.close();
+    }
+  }
+
   //Закртытие Попапа
   close() {
     this._clearListeners();
@@ -27,7 +41,6 @@ export default class Popup extends BaseComponent {
 
   //Открытие Попапа
   open() {
-
     this._popup.classList.add('popup__opened');
     this._popup.appendChild(this.popupElement);
     this._popupSettings();

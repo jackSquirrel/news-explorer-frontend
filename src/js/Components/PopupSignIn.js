@@ -30,6 +30,16 @@ export default class PopupSignIn extends Popup {
         element: this.popupForm,
         event: 'submit',
         callback: (event)=> { this._signIn(event) }
+      },
+      {
+        element: this._popup,
+        event: 'mousedown',
+        callback: (event)=> {this._closeByMousedown(event)}
+      },
+      {
+        element: document,
+        event: 'keydown',
+        callback: (event)=> {this._closeByEsc(event)}
       }
     ]);
   }

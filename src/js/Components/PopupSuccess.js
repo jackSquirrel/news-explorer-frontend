@@ -21,6 +21,16 @@ export default class PopupSuccess extends Popup {
           this.close();
           this._openSignIn();
         }
+      },
+      {
+        element: this._popup,
+        event: 'mousedown',
+        callback: (event)=> {this._closeByMousedown(event)}
+      },
+      {
+        element: document,
+        event: 'keydown',
+        callback: (event)=> {this._closeByEsc(event)}
       }
     ])
   }

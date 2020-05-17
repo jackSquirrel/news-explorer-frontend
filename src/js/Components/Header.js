@@ -48,7 +48,12 @@ export default class Header extends BaseComponent {
     this._endSession()
       .then((res)=>{
         if(res){
-          window.location.href = '../index.html';
+          if(this._color == 'white'){
+            window.location.href = '../index.html';
+          }
+          else{
+            window.location.href = './index.html';
+          }
         }
       })
   }

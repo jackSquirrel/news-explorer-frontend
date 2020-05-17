@@ -11,6 +11,18 @@ export default class Header extends BaseComponent {
     this._endSession = props.quite;
   }
 
+  // Логика работы header на мобильных разрешениях
+  _headerMenuMobile(button){
+    if(button.classList.contains('header__menu-button_open')){
+      this._headerOpen();
+      this._popup.classList.add('popup__opened');
+    }
+    else {
+      this.headerClose();
+      this._popup.classList.remove('popup__opened');
+    };
+  }
+
   // Открыть header на мобильных разрешениях
   _headerOpen(){
     if(this._color === 'white'){
@@ -41,36 +53,20 @@ export default class Header extends BaseComponent {
       })
   }
 
-  _headerMenuMobile(button){
-    if(button.classList.contains('header__menu-button_open')){
-      this._headerOpen();
-      this._popup.classList.add('popup__opened');
-    }
-    else {
-      this.headerClose();
-      this._popup.classList.remove('popup__opened');
-    };
-  }
-
   // Установка начальных конфигураций для header
   headerSettings(){
-    const button = this._headerContainer.querySelector('.header__menu-button');
-
     if(this._color == 'black'){
-      this._getUser()
-      .then((res)=> {
-        if(res){
-          this.render(true);
-        }
-      })
+      this._unauthorisedSettings()
     }
     else {
-      this._getUser()
-      .then((res)=> {
-        this._headerContainer.querySelector('.header__menu_quit-name').textContent = res.name;
-      })
+      this._authorisedSettings()
     }
+    this._setHeaderListeners();
+  }
 
+  // Установка слушателей на header
+  _setHeaderListeners(){
+    const button = this._headerContainer.querySelector('.header__menu-button');
     this._setListeners([
       {
         element: button,
@@ -87,6 +83,24 @@ export default class Header extends BaseComponent {
         }
       }
     ])
+  }
+
+  // конфигурация header для НЕавторизированного пользователя
+  _unauthorisedSettings(){
+    this._getUser()
+    .then((res)=> {
+      if(res){
+        this.render(true);
+      }
+    })
+  }
+
+  // конфигурация header для авторизированного пользователя
+  _authorisedSettings(){
+    this._getUser()
+    .then((res)=> {
+      this._headerContainer.querySelector('.header__menu_quit-name').textContent = res.name;
+    })
   }
 
   //Отрисовка header

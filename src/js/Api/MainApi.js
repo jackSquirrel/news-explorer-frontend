@@ -23,7 +23,7 @@ export default class MainApi {
       return Promise.reject(res);
     })
     .catch((err)=> {
-      console.log('Ошибка: ' + err.message);
+      console.log('Ошибка: ' + err.status);
       return err.json();
     })
   }
@@ -48,11 +48,12 @@ export default class MainApi {
       return Promise.reject(res);
     })
     .catch((err)=> {
-      console.log('Ошибка: ' + err.message);
+      console.log('Ошибка: ' + err.status);
       return err.json();
     })
   }
 
+  // Запрос на завершение сеанса
   logout(){
     return fetch(`${this._link}/logout`, {
       method: 'POST',
@@ -65,7 +66,7 @@ export default class MainApi {
       return Promise.reject(res);
     })
     .catch((err)=> {
-      console.log('Ошибка: ' + err.statusCode);
+      console.log('Ошибка: ' + err.status);
     })
   }
 
@@ -82,7 +83,7 @@ export default class MainApi {
       return Promise.reject(res);
     })
     .catch((err)=> {
-      console.log('Ошибка: ' + err.statusCode);
+      console.log('Ошибка: ' + err.status);
     })
   }
 
@@ -111,7 +112,7 @@ export default class MainApi {
       return Promise.reject(res);
     })
     .catch((err)=> {
-      console.log('Ошибка' + err.statusCode);
+      console.log('Ошибка' + err.status);
     })
   }
 
@@ -128,7 +129,7 @@ export default class MainApi {
       return Promise.reject(res)
     })
     .catch((err)=> {
-      console.log('Ошибка' + err.statusCode);
+      console.log('Ошибка' + err.status);
     })
   }
 
@@ -145,7 +146,7 @@ export default class MainApi {
       return Promise.reject(res);
     })
     .catch((err)=>{
-      console.log('Ошибка' + err.statusCode);
+      console.log('Ошибка' + err.status);
     })
   }
 }

@@ -6,6 +6,7 @@ export default class PopupSuccess extends Popup {
     this._openSignIn = props.openSignIn;
   }
 
+  // Конфигурация попапа
   _popupSettings() {
     this._setListeners([
       {

@@ -10,11 +10,8 @@ export default class PopupSignIn extends Popup {
     this._closeHeader = props.closeHeader;
   }
 
-  _popupSettings(){
-    this._closeHeader();
-    this._validation(this.popupForm);
-    this.popupElement.querySelector('.popup__button-error').textContent = '';
-
+  // Установка слушателей на попап
+  _setPopupListeners(){
     this._setListeners([
       {
         element: this.popupElement.querySelector('.popup__close'),
@@ -35,11 +32,19 @@ export default class PopupSignIn extends Popup {
         callback: (event)=> { this._signIn(event) }
       }
     ]);
+  }
 
+  // Конфигурация попапа
+  _popupSettings(){
+    this._closeHeader();
+    this._validation(this.popupForm);
+    this._setPopupListeners();
+    this.popupElement.querySelector('.popup__button-error').textContent = '';
     this.popupElement.querySelector('.popup__button').setAttribute('disabled', true);
     this.popupElement.querySelector('.popup__button').classList.remove('popup__button_active');
   }
 
+  // Выполнение входа
   _signIn(event) {
     event.preventDefault();
     const error = this.popupElement.querySelector('.popup__button-error');

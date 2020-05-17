@@ -48,7 +48,12 @@ api.getArticles()
 
 api.getUserData()
   .then((res) => {
-    userName.textContent = res.name;
+    if(res){
+      userName.textContent = res.name;
+    }
+    else {
+      window.location.href = 'http://localhost:8081'
+    }
   })
 
 

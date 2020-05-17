@@ -19,7 +19,7 @@ export default class Card extends BaseComponent {
     this._container = props.container;
   }
 
-  // Действие при нажатии по иконке
+  // Действие при нажатии на иконку
   _saveOrDelete(event) {
     if(event.target.classList.contains('card__save_logged') && !event.target.classList.contains('card__save_marked')){
       this._save(event);
@@ -110,7 +110,12 @@ export default class Card extends BaseComponent {
             }
           })
         })
-      this._setListeners([
+    this._setLoggedListeners();
+  }
+
+  // Установка слушателей на карточки, если пользователь авторизирован
+  _setLoggedListeners(){
+    this._setListeners([
       {
         element: this._element.querySelector('.card__save'),
         event: 'click',
@@ -121,7 +126,7 @@ export default class Card extends BaseComponent {
       ])
   }
 
-  // Конфигурация карточки для неавторизированного пользователя
+  // Конфигурация карточки для неавторизированного пользователя (установка слушателей)
   _unloggedConfig() {
     this._setListeners([
       {
@@ -141,7 +146,7 @@ export default class Card extends BaseComponent {
     ])
   }
 
-  // Конфигурация сохраненной карточки
+  // Конфигурация сохраненной карточки (установка слушателей)
   _savedConfig() {
     this._setListeners([
       {

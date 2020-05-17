@@ -19,13 +19,21 @@ export default class SearchForm extends BaseComponent {
       {
         element: this._form,
         event: 'submit',
-        callback: (event)=> {this._searchCards(event)}
+        callback: (event)=> {
+          event.preventDefault();
+          if(this._form.elements.searching.value == ''){
+            this._form.querySelector('.search__input').setCustomValidity('Введите ключевое слово для поиска');
+          }
+          else {
+            this._form.querySelector('.search__input').setCustomValidity('');
+            this._searchCards();
+          }
+        }
       }
     ])
   }
 
-  _searchCards(event) {
-    event.preventDefault();
+  _searchCards() {
     this._preloader.classList.remove('invisible');
     this._notFound.classList.add('invisible');
 

@@ -1,5 +1,5 @@
 import createNewCard from "./createNewCard";
-import CardList from "./js/Components/CardList";
+import CardList from "../Components/CardList";
 import Api from "../Api/MainApi";
 
 const button = document.querySelector('.results__see-more');

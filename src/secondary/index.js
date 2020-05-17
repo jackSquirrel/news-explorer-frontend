@@ -24,7 +24,10 @@ const header = new Header({
   popup,
   getUser: ()=> {
     return api.getUserData();
-  }
+  },
+  quite: ()=> {
+    return api.logout();
+  },
 });
 header.headerSettings();
 

@@ -1,5 +1,5 @@
 import "./style.css";
-import {popupSignIn, popupSignUp, popupSuccess} from "./js/popupContent";
+import {popupSignIn, popupSignUp, popupSuccess} from "./js/Constants/popupContent";
 import PopupSignUp from "./js/Components/PopupSignUp";
 import PopupSignIn from "./js/Components/PopupSignIn";
 import Validation from "./js/Components/Validation";
@@ -14,11 +14,11 @@ import formatDate from "./js/Utils/formatDate";
 // ПЕРЕМЕННЫЕ
 const signUpButton = document.querySelector('.header__menu_auth');
 const popup = document.querySelector('.popup');
-const serverUrl = 'https://api.explorenews.gq';
 const container = document.querySelector('.results__container');
 const resultsSection = document.querySelector('.results');
 const headerContainer = document.querySelector('.header');
 const headerButton = headerContainer.querySelector('.header__menu-button');
+const serverUrl = 'https://api.explorenews.gq';
 
 // Взаимодействие с сервером
 const api = new Api({
@@ -48,7 +48,7 @@ const validation = new Validation({
   wrongEmail: "Не соответствует формату Email"
 });
 
-// Попап для входа
+// Экземпляр попапа для входа
 const signInPopup = new PopupSignIn({
   content: popupSignIn,
   popup,
@@ -68,17 +68,15 @@ const signInPopup = new PopupSignIn({
     header.render(isLoggedIn);
   }
 });
-signInPopup.render();
 
-// Попап успешной регистрации
+// Экземпляр попапа успешной регистрации
 const successPopup = new PopupSuccess({
   content: popupSuccess,
   popup,
   openSignIn: () => { signInPopup.open() }
 });
-successPopup.render();
 
-// Попап для регистрации
+// Экземпляр попапа для регистрации
 const signUpPopup = new PopupSignUp({
   content: popupSignUp,
   popup,
@@ -91,9 +89,8 @@ const signUpPopup = new PopupSignUp({
     return api.signup(email, name, password);
   }
 });
-signUpPopup.render();
 
-// Форма для поиска
+// Экземпляр формы для поиска
 const searchForm = new SearchForm({
   form: document.querySelector('.search__field'),
   preloader: document.querySelector('.preloader'),
@@ -108,8 +105,6 @@ const searchForm = new SearchForm({
   },
   resultsList: createNewList
 });
-searchForm.settings();
-
 
 //СЛУШАТЕЛИ СОБЫТИЙ И ВЫЗОВЫ ФУНКЦИЙ
 //Открытие попапа по нажатию на кнопку
@@ -117,3 +112,11 @@ signUpButton.addEventListener('click', signInPopup.open);
 
 // Орисовка header
 header.headerSettings();
+// Отрисовка попапа для входа
+signInPopup.render();
+// Отрисовка попапа успешной регистрации
+successPopup.render();
+// Отрисовка попапа для регистрации
+signUpPopup.render();
+// Отрисовка формы для поиска
+searchForm.settings();

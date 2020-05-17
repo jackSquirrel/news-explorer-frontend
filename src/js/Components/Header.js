@@ -48,7 +48,7 @@ export default class Header extends BaseComponent {
     this._endSession()
       .then((res)=>{
         if(res){
-          window.location.href = 'http://localhost:8081'
+          window.location.href = '../index.html';
         }
       })
   }

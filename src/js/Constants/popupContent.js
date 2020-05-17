@@ -1,4 +1,4 @@
-import "../images/back.svg";
+import "../../images/back.svg";
 
 const popupSignIn = `
 <div class="popup__content">

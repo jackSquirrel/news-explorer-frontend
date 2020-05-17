@@ -53,6 +53,22 @@ export default class MainApi {
     })
   }
 
+  logout(){
+    return fetch(`${this._link}/logout`, {
+      method: 'POST',
+      credentials: 'include'
+    })
+    .then((res)=>{
+      if(res.ok){
+        return res.json();
+      }
+      return Promise.reject(res);
+    })
+    .catch((err)=> {
+      console.log('Ошибка: ' + err.statusCode);
+    })
+  }
+
   // Запрос на получение данных пользователя
   getUserData(){
     return fetch(`${this._link}/users/me`, {

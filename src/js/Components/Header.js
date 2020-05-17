@@ -8,6 +8,7 @@ export default class Header extends BaseComponent {
     this._getUser = props.getUser;
     this._popup = props.popup;
     this._headerButton = props.headerButton;
+    this._endSession = props.quite;
   }
 
   // Открыть header на мобильных разрешениях
@@ -31,11 +32,13 @@ export default class Header extends BaseComponent {
   }
 
   // Выйти из текущего сеанса
-  _quit(name){
-    const cookie_date = new Date();
-    cookie_date.setTime(cookie_date.getTime() - 1);
-    document.cookie = name += "=; expires=" + cookie_date.toGMTString();
-    this.render(false);
+  _quit(){
+    this._endSession()
+      .then((res)=>{
+        if(res){
+          this.render(false);
+        }
+      })
   }
 
   _headerMenuMobile(button){
@@ -80,7 +83,7 @@ export default class Header extends BaseComponent {
         element: this._headerContainer.querySelector('.header__menu_quit'),
         event: 'click',
         callback: ()=> {
-          this._quit('jwt');
+          this._quit();
         }
       }
     ])

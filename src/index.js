@@ -9,6 +9,7 @@ import PopupSuccess from "./js/Components/PopupSuccess";
 import SearchForm from "./js/Components/SearchForm";
 import Header from "./js/Components/Header";
 import createNewList from "./js/Utils/createNewList";
+import formatDate from "./js/Utils/formatDate";
 
 // ПЕРЕМЕННЫЕ
 const signUpButton = document.querySelector('.header__menu_auth');
@@ -25,7 +26,7 @@ const api = new Api({
 });
 
 // Взаимодействие с NewsApi
-const newsApi = new NewsApi();
+const newsApi = new NewsApi(formatDate);
 
 // Экземпляр header
 const header = new Header({

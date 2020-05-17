@@ -9,6 +9,9 @@ const container = document.querySelector('.results__container');
 const headerContainer = document.querySelector('.header');
 const headerButton = headerContainer.querySelector('.header__menu-button');
 const popup = document.querySelector('.popup');
+const articlesCount = document.querySelector('.articles__length');
+const userName = document.querySelector('.articles__name');
+const keywordsContainer = document.querySelector('.keywords');
 
 const api = new Api({
   baseUrl: serverUrl
@@ -27,6 +30,14 @@ header.headerSettings();
 
 api.getArticles()
   .then((res) => {
+    articlesCount.textContent = res.length;
+    let keywords = [];
+    res.forEach((article)=> {
+      keywords.push(article.keyword)
+    });
+    const sortedKeywords = sortKeywords(keywords);
+    renderKeywords(sortedKeywords);
+
     const cardList = new CardList({
       cards: res,
       cardsContainer: container,
@@ -34,6 +45,12 @@ api.getArticles()
     })
     cardList.renderAll();
   })
+
+api.getUserData()
+  .then((res) => {
+    userName.textContent = res.name;
+  })
+
 
 function createNewCard(keyword, img, link, date, title, text, source, isLoggedIn, cardId){
   return new Card({
@@ -96,5 +113,38 @@ function monthFormat(month){
   }
   if(month == '12'){
     return ' декабря, '
+  }
+}
+
+function sortKeywords(keywords) {
+  let keywordList = [];
+  for(let i = 0; i < keywords.length; i++){
+    if(!keywordList.find((keyword)=>{
+      if(keywords[i] === keyword.name){
+        keyword.num++;
+        return true;
+      }
+      return false
+    })){
+      keywordList.push({name: keywords[i], num: 1})
+    }
+  }
+
+  keywordList.sort((a, b) => a.num < b.num ? 1 : -1);
+  return keywordList;
+}
+
+function renderKeywords(keywords) {
+  if(keywords.length == 1){
+    keywordsContainer.textContent = keywords[0].name;
+  }
+  if(keywords.length == 2){
+    keywordsContainer.textContent = keywords[0].name + ' и ' + keywords[1].name;
+  }
+  if(keywords.length == 3){
+    keywordsContainer.textContent = keywords[0].name + ', ' + keywords[1].name + ' и ' + keywords[2].name;
+  }
+  if(keywords.length > 3){
+    keywordsContainer.textContent = keywords[0].name + ', ' + keywords[1].name + ` и ${keywords.length - 2} другим`;
   }
 }

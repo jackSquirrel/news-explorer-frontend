@@ -8,25 +8,24 @@
   <meta name="author" content="Исмагилов Тимур">
   <link rel="shortcut icon" href=".././images/favicon.svg">
   <title>NewsExplorer</title>
-  <link rel="stylesheet" href="../secondary/secondary.9482305cae086e7535ea.css">
+  <link rel="stylesheet" href="../secondary/secondary.f8d659352cc13df441e6.css">
 </head>
 <body>
   <div class="root">
-    <header class="header">
-      <p class="header__logo header__black">NewsExplorer</p>
+    <header class="header header__black">
+      <p class="header__logo">NewsExplorer</p>
       <!-- При открытом меню меняется на header__menu-button_close -->
-      <button class="header__menu-button header__menu-button_open-black" type="button"></button>
+      <button class="header__menu-button header__menu-button_open" type="button"></button>
       <div class="header__menu header__authorized">
-        <a class="header__menu_main header__black" href="../index.html">Главная</a>
-        <a class="header__menu_saved header__menu_active-black header__black" href="index.html">Сохраненные статьи</a>
+        <a class="header__menu_main" href="../index.html">Главная</a>
+        <a class="header__menu_saved header__menu_active" href="index.html">Сохраненные статьи</a>
         <button  class="header__menu_quit header__black_border" type="button">
-          Name
+          <span class="header__menu_quit-name"></span>
           <picture>
             <source srcset=".././images/logout-white.svg" media="(max-width: 650px)">
             <source srcset=".././images/logout.svg">
             <img class="header__menu_quit_img" src=".././images/logout.svg" alt="quit">
           </picture>
-
         </button>
       </div>
     </header>
@@ -34,59 +33,13 @@
     <main class="content">
       <section class="articles">
         <p class="articles__title">Сохраненные статьи</p>
-        <h2 class="articles__info">Name, у вас n сохраненных статей</h2>
-        <p class="articles__keywords">По ключевым словам...</p>
+        <h2 class="articles__info"><span class="articles__name"></span>, у вас
+          <span class="articles__length"></span> сохраненных статей</h2>
+        <p class="articles__keywords">По ключевым словам: <span class="keywords"></span></p>
       </section>
 
       <section class="results">
-        <div class="results__container">
-          <div class="card">
-            <div class="card__img">
-              <p class="card__keyword">Keyword</p>
-              <!-- Класс card__rem-saved_hovered добавляется через js при наведении -->
-              <p class="card__rem-saved card__rem-saved_hovered">Убрать из сохраненных</p>
-              <!-- При помощи js при наведении класс будет изменяться на card__trash_hovered -->
-              <button class="card__trash" type="button"></button>
-            </div>
-            <p class="card__date">2 августа, 2019</p>
-            <h3 class="card__title">Национальные парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
-              назад здесь начала складываться система национальных парков – охраняемых
-              территорий, где и сегодня каждый может приобщиться к природе.
-            </p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-
-          <div class="card">
-            <div class="card__img">
-              <p class="card__keyword">Keyword</p>
-              <p class="card__rem-saved">Убрать из сохраненных</p>
-              <button class="card__trash" type="button"></button>
-            </div>
-            <p class="card__date">2 августа, 2019</p>
-            <h3 class="card__title">Национальные парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
-              назад здесь начала складываться система национальных парков – охраняемых
-              территорий, где и сегодня каждый может приобщиться к природе.
-            </p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-
-          <div class="card">
-            <div class="card__img">
-              <p class="card__keyword">Keyword</p>
-              <p class="card__rem-saved">Убрать из сохраненных</p>
-              <button class="card__trash" type="button"></button>
-            </div>
-            <p class="card__date">2 августа, 2019</p>
-            <h3 class="card__title">Национальные парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
-              назад здесь начала складываться система национальных парков – охраняемых
-              территорий, где и сегодня каждый может приобщиться к природе.
-            </p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-        </div>
+        <div class="results__container"></div>
       </section>
     </main>
 
@@ -99,7 +52,9 @@
       <a class="footer__socials footer__socials_fb" href="https://vk.com/jack.squirrel" target="_blank"></a>
       <a class="footer__rights" href="https://newsapi.org/" target="_blank">©2020 Supersite, Powered by News API</a>
     </footer>
+
+    <div class="popup"></div>
   </div>
-  <script type = "module" src="../secondary/secondary.048dd97f94bbfcb260a5.js"></script>
+  <script type = "module" src="../secondary/secondary.1a6b28ea60e99ee4e023.js"></script>
 </body>
 </html>

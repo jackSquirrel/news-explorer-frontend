@@ -8,7 +8,7 @@
   <meta name="author" content="Исмагилов Тимур">
   <link rel="shortcut icon" href="./images/favicon.svg">
   <title>NewsExplorer</title>
-  <link rel="stylesheet" href="main/main.b03370e12b4da84c9dbe.css">
+  <link rel="stylesheet" href="main/main.04d9ece97a5d287c8838.css">
 </head>
 <body>
   <div class="root">
@@ -20,19 +20,15 @@
         <!-- При открытом меню меняется на header__menu-button_close при помощи js -->
         <button class="header__menu-button header__menu-button_open" type="button"></button>
 
-        <!-- Меню для неавторизированного состояния -->
+        <!-- header__unauthorized - меню для неавторизированного состояния
+            header__authorized - меню для неавторизированного состояния -->
+
         <div class="header__menu header__unauthorized">
           <a class="header__menu_main header__menu_active" href="index.html">Главная</a>
           <button class="header__menu_auth" type="button">Авторизироваться</button>
-        </div>
-
-        <!-- Меню для авторизированного состояния -->
-        <!-- header__menu_open - открывает меню в мобильной версии -->
-        <div class="header__menu header__authorized invisible">
-          <a class="header__menu_main header__menu_active" href="index.html">Главная</a>
           <a class="header__menu_saved" href="secondary/index.html">Сохраненные статьи</a>
           <button  class="header__menu_quit" type="submit">
-            Name
+            <span class="header__menu_quit-name"></span>
             <img class="header__menu_quit_img" src="./images/logout-white.svg" alt="quit">
           </button>
         </div>
@@ -43,84 +39,27 @@
         <p class="search__subtitle">Найдите самые свежие статьи на любую тему
           и сохраняйте в своем личном кабинете.</p>
         <form method="GET" class="search__field">
-          <input class="search__input" placeholder="Введите тему новости" name="searching" type="search">
+          <input class="search__input" placeholder="Введите тему новости" name="searching" type="search" required>
           <button class="search__button" type="submit">Искать</button>
         </form>
       </section>
     </div>
 
     <main class="content">
-      <section class="preloader">
+      <section class="preloader invisible">
         <i class="circle-preloader"></i>
         <p class="preloader__message">Идет поиск новостей...</p>
       </section>
 
-      <section class="not-found ">
+      <section class="not-found invisible">
         <div class="not-found__image"></div>
         <h4 class="not-found__title">Ничего не найдено</h4>
         <p class="not-found__text">К сожалению по вашему запросу ничего не найдено.</p>
       </section>
 
-      <section class="results">
+      <section class="results invisible">
         <h2 class="results__title">Результаты поиска</h2>
-        <div class="results__container">
-          <div class="card">
-            <div class="card__img">
-              <!-- card__unlog_hovered будет открывать требование войти при наведении через js -->
-              <p class="card__unlog card__unlog_hovered">Войдите, чтобы сохранять статьи</p>
-              <!-- При помощи js при наведении класс будет изменяться на card__save_hovered -->
-              <button class="card__save card__save_unsaved" type="button"></button>
-            </div>
-            <p class="card__date">2 августа, 2019</p>
-            <h3 class="card__title">Национальные парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
-              назад здесь начала складываться система национальных парков – охраняемых
-              территорий, где и сегодня каждый может приобщиться к природе.
-            </p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-
-          <div class="card">
-            <div class="card__img">
-              <p class="card__unlog">Войдите, чтобы сохранять статьи</p>
-              <button class="card__save card__save_unsaved" type="button"></button>
-            </div>
-            <p class="card__date">2 августа, 2019</p>
-            <h3 class="card__title">Национальные парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
-              назад здесь начала складываться система национальных парков – охраняемых
-              территорий, где и сегодня каждый может приобщиться к природе.
-            </p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-
-          <div class="card">
-            <div class="card__img">
-              <p class="card__unlog card__unlog_hovered">Войдите, чтобы сохранять статьи</p>
-              <button class="card__save card__save_unsaved" type="button"></button>
-            </div>
-            <p class="card__date">2 августа, 2019</p>
-            <h3 class="card__title">Национальные парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет
-              назад здесь начала складываться система национальных парков – охраняемых
-              территорий, где и сегодня каждый может приобщиться к природе.
-            </p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-
-          <div class="card">
-            <div class="card__img">
-              <p class="card__unlog">Войдите, чтобы сохранять статьи</p>
-              <!-- Пример сохранненной карточки -->
-              <button class="card__save card__save_marked" type="button"></button>
-            </div>
-            <p class="card__date">2 августа, 2019</p>
-            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-            <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
-            </p>
-            <p class="card__source">риа</p>
-          </div>
-        </div>
+        <div class="results__container"></div>
         <button class="results__see-more" type="button">Показать еще</button>
       </section>
 
@@ -148,17 +87,12 @@
       <a class="footer__socials footer__socials_fb" href="https://vk.com/jack.squirrel" target="_blank"></a>
       <a class="footer__rights" href="https://newsapi.org/" target="_blank">©2020 Supersite, Powered by News API</a>
     </footer>
-
-
-    <!-- Ниже представленны экземпляры форм попапов, разметках которых будет
-    храниться в JS коде, таким образом, в конечной разметке страницы ошибок валидатора,
-    связанных с повторяющимися id email и password не будет -->
       <div class="popup">
     <!-- popup__opened - блокирует и затемняет root,
          чтобы просмотреть форму - удалить invisible -->
       <!-- экземпляр попапа успешной регистрации -->
     </div>
   </div>
-  <script type = "module" src="main/main.e318200e35756d9fc7c2.js"></script>
+  <script type = "module" src="main/main.f3afd3fd79506fe4f728.js"></script>
 </body>
 </html>

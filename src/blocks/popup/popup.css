@@ -6,10 +6,10 @@
 @import url(./__input-title/popup__input-title.css);
 @import url(./__input/popup__input.css);
 @import url(./__error/popup__error.css);
-@import url(./__is-not-valid/popup__is-not-valid.css);
 @import url(./__button/popup__button.css);
 @import url(./__or/popup__or.css);
 @import url(./__button-error/popup__button-error.css);
+@import url(./__is-not-valid/popup__is-not-valid.css);
 
 .popup {
   position: fixed;

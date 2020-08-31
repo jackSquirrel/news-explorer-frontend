@@ -4,7 +4,7 @@
   "description": "Frontend for news-explorer project",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development&webpack-dev-server --mode development --open --watch",
+    "dev": "NODE_ENV=development&webpack-dev-server --port 8081 --mode development --open --watch",
     "start": "NODE_ENV=production&rimraf dist && webpack --mode production",
     "deploy": "NODE_ENV=production gh-pages -d dist"
   },

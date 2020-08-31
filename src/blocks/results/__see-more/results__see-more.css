@@ -13,6 +13,10 @@
   cursor: pointer;
 }
 
+.results__see-more.invisible {
+  display: none;
+}
+
 .results__see-more:hover {
   opacity: 0.8;
 }
